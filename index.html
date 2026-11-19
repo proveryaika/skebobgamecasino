@@ -2181,6 +2181,7 @@ a:focus:not(:focus-visible),
 }
 
 
+#settings .settings-currency-rub,#settings .settings-currency-usd{display:none!important;pointer-events:none!important}
 </style>
 <link rel="stylesheet" href="./dashboard.css?v=28">
 </head>
@@ -3554,7 +3555,6 @@ let dailyOpening=false;
 function storageGet(key){try{return window.localStorage.getItem(key)}catch(error){console.warn("Хранилище браузера недоступно:",error);return null}}
 function storageSet(key,value){try{window.localStorage.setItem(key,value);return true}catch(error){console.warn("Не удалось сохранить данные браузера:",error);return false}}
 
-#settings .settings-currency-rub,#settings .settings-currency-usd{display:none!important;pointer-events:none!important}
 /* =========================
    SAVE
 ========================= */
