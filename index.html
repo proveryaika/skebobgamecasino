@@ -1966,7 +1966,7 @@ body.light #settings .reference-setting-row{background:linear-gradient(110deg,#6
  font-size:clamp(12px,2.5vw,22px)!important;font-weight:500!important;
  line-height:1!important;white-space:nowrap!important;pointer-events:none!important;
 }
-#settings .settings-currency-rub::after{content:"₽ Рубли"!important}
+#settings .settings-currency-rub::after{content:"⭐ Рубли"!important}
 #settings .settings-currency-usd::after{content:"$ Доллары"!important}
 #settings .settings-currency-rub.is-selected,#settings .settings-currency-usd.is-selected{
  background:#9200dc!important;border-color:#d9a0ff!important;
@@ -2271,7 +2271,7 @@ window.prompt=(message,value)=>{void skebobDialog("prompt",message,value);return
 <div class="sk-work">
 <div class="sk-top">
 
-<div class="sk-coins"><span class="sk-coin">🪙</span><span id="dashboardBalance">1,000</span></div><button id="topupWithdrawButton" class="topup-withdraw-button" type="button">⭐ ПОПОЛНЕНИЕ</button><div id="leaderboardWidget" class="leaderboard-widget"><button id="leaderboardToggle" class="leaderboard-toggle" type="button" aria-expanded="false">🏆 ЛИДЕРБОРД <span id="leaderboardArrow">▼</span></button><div id="leaderboardPanel" class="leaderboard-panel" aria-label="Топ 20 игроков"><div class="leaderboard-head"><span>ТОП-20 ПО БАЛАНСУ</span></div><div id="leaderboardRows" class="leaderboard-note">Загружаем рейтинг…</div></div></div>
+<div class="sk-coins"><span class="sk-coin">⭐</span><span id="dashboardBalance">1,000</span></div><div id="leaderboardWidget" class="leaderboard-widget"><button id="leaderboardToggle" class="leaderboard-toggle" type="button" aria-expanded="false">🏆 ЛИДЕРБОРД <span id="leaderboardArrow">▼</span></button><div id="leaderboardPanel" class="leaderboard-panel" aria-label="Топ 20 игроков"><div class="leaderboard-head"><span>ТОП-20 ПО БАЛАНСУ</span></div><div id="leaderboardRows" class="leaderboard-note">Загружаем рейтинг…</div></div></div>
 
 
 </div>
@@ -2320,7 +2320,7 @@ SKEBOB <span>CASINO</span>
 
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0">
 <div class="small">ТВОЙ БАЛАНС</div>
-<strong id="balance">1000</strong> 🪙
+<strong id="balance">1000</strong> ⭐
 </div>
 
 <div class="small">
@@ -2371,8 +2371,8 @@ SKEBOB <span>CASINO</span>
 <section id="skebobTap" class="hidden">
  <h2>👆 SKEBOB TAP</h2>
  <div class="panel tap-panel">
-  <p class="small">Тапай и получай виртуальные рубли. За один тап — 0,01 ₽. Часовой лимит — 5 ₽.</p>
-  <div class="tap-stats"><div><span>Заработано за час</span><strong id="tapEarned">0,00 ₽</strong></div><div><span>Осталось до лимита</span><strong id="tapRemaining">5,00 ₽</strong></div></div>
+  <p class="small">Тапай и получай виртуальные рубли. За один тап — 0,01 ⭐. Часовой лимит — 5 ⭐.</p>
+  <div class="tap-stats"><div><span>Заработано за час</span><strong id="tapEarned">0,00 ⭐</strong></div><div><span>Осталось до лимита</span><strong id="tapRemaining">5,00 ⭐</strong></div></div>
   <button id="tapButton" class="tap-main" type="button" onclick="return handleSkebobTap();">👆 ТАП!</button>
   <div id="tapStatus" class="tap-status" aria-live="polite">Каждый тап приносит 0,01 виртуального рубля.</div>
   <div class="small" id="tapTimer"></div>
@@ -2472,7 +2472,7 @@ id="upgradeArrow"
 </strong>
 
 <span id="upgradeValues">
-100 → 200 🪙
+100 → 200 ⭐
 </span>
 
 </div>
@@ -2583,7 +2583,7 @@ class="game-main"
 id="minePlayButton"
 onclick="mineMainAction()"
 >
-ИГРАТЬ ЗА 1 000 🪙
+ИГРАТЬ ЗА 1 000 ⭐
 </button>
 
 <div class="game-control">
@@ -2738,7 +2738,7 @@ x1,00
 <div class="game-stat">
 <span>ВЫИГРЫШ</span>
 <strong id="planePotential">
-0 🪙
+0 ⭐
 </strong>
 </div>
 
@@ -2807,7 +2807,7 @@ class="game-main"
 id="planePlayButton"
 onclick="planeMainAction()"
 >
-✈️ ВЗЛЁТ ЗА 1 000 🪙
+✈️ ВЗЛЁТ ЗА 1 000 ⭐
 </button>
 
 <div class="game-control">
@@ -2890,7 +2890,7 @@ class="game-status"
 <h2>🔴 PLINKO</h2>
 <div class="plinko-panel">
  <div class="game-stats">
-  <div class="game-stat"><span>СТАВКА</span><strong id="plinkoBetStat">100 🪙</strong></div>
+  <div class="game-stat"><span>СТАВКА</span><strong id="plinkoBetStat">100 ⭐</strong></div>
   <div class="game-stat"><span>РИСК</span><strong id="plinkoRiskStat">СРЕДНИЙ</strong></div>
   <div class="game-stat"><span>ВОЗВРАТ</span><strong class="orange" id="plinkoReturn">—</strong></div>
  </div>
@@ -2904,7 +2904,7 @@ class="game-status"
   <div class="plinko-slots" id="plinkoSlots"></div>
  </div>
  <div class="plinko-last" id="plinkoResult">Выбери ставку и запусти шарик!</div>
- <button class="game-main" id="plinkoPlayButton" onclick="startPlinkoGame()">🔴 БРОСИТЬ ШАР ЗА 100 🪙</button>
+ <button class="game-main" id="plinkoPlayButton" onclick="startPlinkoGame()">🔴 БРОСИТЬ ШАР ЗА 100 ⭐</button>
  <div class="game-control">
   <div class="small" style="text-align:center">СТАВКА</div>
   <div class="bet-main">
@@ -2929,11 +2929,11 @@ class="game-status"
 
 <section id="race" class="hidden">
 <h2>🏎️ RACE · GRAND PRIX</h2><div class="race-panel">
-<div class="game-stats"><div class="game-stat"><span>СТАВКА</span><strong id="raceBetStat">100 🪙</strong></div><div class="game-stat"><span>ТВОЯ МАШИНА</span><strong id="racePickStat">🔴 №1</strong></div><div class="game-stat"><span>КОЭФФИЦИЕНТ</span><strong>×2.00</strong></div></div>
+<div class="game-stats"><div class="game-stat"><span>СТАВКА</span><strong id="raceBetStat">100 ⭐</strong></div><div class="game-stat"><span>ТВОЯ МАШИНА</span><strong id="racePickStat">🔴 №1</strong></div><div class="game-stat"><span>КОЭФФИЦИЕНТ</span><strong>×2.00</strong></div></div>
 <div class="race-track" id="raceTrack"><div class="race-finish">🏁</div><div class="race-lanes" id="raceLanes"></div><div class="race-track-label">SKEBOB MOTORSPORT · CIRCUIT RACE</div></div>
 <div class="race-picks"><button class="active" onclick="selectRace(0,this)">🔴 GT-R №1</button><button onclick="selectRace(1,this)">🔵 SUPRA №2</button><button onclick="selectRace(2,this)">🟡 911 №3</button><button onclick="selectRace(3,this)">🟢 M4 №4</button></div>
 <div class="race-result" id="raceResult">Выбери участника и делай ставку!</div>
-<button class="game-main" id="racePlayButton" onclick="startRaceGame()">🏁 НАЧАТЬ ГОНКУ ЗА 100 🪙</button>
+<button class="game-main" id="racePlayButton" onclick="startRaceGame()">🏁 НАЧАТЬ ГОНКУ ЗА 100 ⭐</button>
 <div class="game-control"><div class="small" style="text-align:center">СТАВКА</div><div class="bet-main"><button onclick="changeRaceBet(-1)">−</button><input id="raceBet" type="number" value="100" min="10" oninput="updateRaceControls()"><button onclick="changeRaceBet(1)">+</button></div><div class="bet-presets race-presets"><button onclick="setRaceBet(10,this)">10</button><button class="selected" onclick="setRaceBet(100,this)">100</button><button onclick="setRaceBet(500,this)">500</button><button onclick="setRaceBet(1000,this)">1 000</button><button onclick="setRaceBet('max',this)">МАКС</button></div></div>
 <div class="race-footer"><button class="secondary" id="raceSoundButton" onclick="toggleRaceSound()">🔊 ЗВУК ВКЛ</button><span class="small">4 участника · случайный победитель</span></div>
 <div class="plinko-info">Выбери гонщика, поставь монеты и смотри анимированную гонку. Победитель выбирается случайно. Выплата за победу — ×2.</div></div></section>
@@ -3003,7 +3003,7 @@ id="profileLevelProgressText"
 class="profile-card-value"
 id="statTotalWon"
 >
-0 🪙
+0 ⭐
 </div>
 
 <div class="profile-card-icon">
@@ -3022,7 +3022,7 @@ id="statTotalWon"
 class="profile-card-value"
 id="statBestWin"
 >
-0 🪙
+0 ⭐
 </div>
 
 <div class="profile-card-icon">
@@ -3125,7 +3125,7 @@ id="statPlaneWins"
 class="profile-card-value"
 id="statTurnover"
 >
-0 🪙
+0 ⭐
 </div>
 
 <div class="profile-card-icon">
@@ -3144,11 +3144,11 @@ id="statTurnover"
 class="profile-card-value"
 id="profileBalance"
 >
-0 🪙
+0 ⭐
 </div>
 
 <div class="profile-card-icon">
-🪙
+⭐
 </div>
 
 </div>
@@ -3157,14 +3157,7 @@ id="profileBalance"
 
 <div class="panel profile-account-controls">
  <h3>⚙️ УПРАВЛЕНИЕ АККАУНТОМ</h3>
- <div class="profile-account-row">
-  <div><b>Валюта</b><div class="small">Выбери отображение баланса</div></div>
-  <div class="profile-currency-options">
-   <button type="button" class="profile-currency-btn profile-currency-rub" aria-label="Выбрать рубли" aria-pressed="false" onclick="setCurrency('RUB')">₽ Рубли</button>
-   <button type="button" class="profile-currency-btn profile-currency-usd" aria-label="Выбрать доллары" aria-pressed="false" onclick="setCurrency('USD')">$ Доллары</button>
-  </div>
- </div>
- <div class="profile-account-row profile-reset-row">
+<div class="profile-account-row profile-reset-row">
   <div><b>Сброс игрового прогресса</b><div class="small">Удалит баланс, предметы и статистику</div></div>
   <button type="button" class="profile-reset-button" onclick="resetGame()">Сбросить</button>
  </div>
@@ -3179,7 +3172,7 @@ id="profileBalance"
 <p class="small">Крути барабаны, собирай комбинации и забирай множители!</p>
 <div class="panel" style="text-align:center">
 <div class="game-stats">
-<div class="game-stat"><span>СТАВКА</span><strong id="slotsBetStat">100 🪙</strong></div>
+<div class="game-stat"><span>СТАВКА</span><strong id="slotsBetStat">100 ⭐</strong></div>
 <div class="game-stat"><span>ВЫИГРЫШ</span><strong id="slotsWinStat">—</strong></div>
 <div class="game-stat"><span>ЛУЧШИЙ МНОЖИТЕЛЬ</span><strong id="slotsBestStat">x0</strong></div>
 </div>
@@ -3248,7 +3241,7 @@ const SKEBOB_TAP_WINDOW=60*60*1000;
 
 const PROMOCODES={};
 
-// NFT-кейсы: 80 🪙 = $1. Стоимости — игровые ориентиры коллекций.
+// NFT-кейсы: 80 ⭐ = $1. Стоимости — игровые ориентиры коллекций.
 const nftImage = id => "https://www.larvalabs.com/public/images/cryptopunks/punk" + String(id).padStart(4,"0") + ".png";
 const nftItem = (contract,id) => "https://opensea.io/item/ethereum/" + contract + "/" + id + "/opengraph-image";
 const nftCollections = [
@@ -3352,8 +3345,8 @@ const cases=[
  {name:"COLLECTOR PRO",icon:"🏅",price:4500,desc:"Расширенная коллекция цифровых предметов",items:[7,8,9,10,11,12,13,14]},
  {name:"GOLDEN DROP",icon:"🌟",price:6000,desc:"Премиальная подборка NFT-аватаров",items:[6,7,8,9,10,11,12,13]},
  {name:"SAPPHIRE CASE",icon:"🔷",price:7500,desc:"Редкие представители популярных коллекций",items:[5,6,7,8,9,10,11,12]},
- {name:"ROYAL NFT",icon:"👑",price:10000,desc:"Лучшие призы в линейке кейсов до 10 000 ₽",items:[4,5,6,7,8,9,10,11]},
- {name:"MICRO NFT",icon:"🪙",price:80,desc:"Начальный дроп — недорогие цифровые коллекционные предметы",items:[16,18,19,20]},
+ {name:"ROYAL NFT",icon:"👑",price:10000,desc:"Лучшие призы в линейке кейсов до 10 000 ⭐",items:[4,5,6,7,8,9,10,11]},
+ {name:"MICRO NFT",icon:"⭐",price:80,desc:"Начальный дроп — недорогие цифровые коллекционные предметы",items:[16,18,19,20]},
  {name:"PIXEL START",icon:"👾",price:400,desc:"Доступные NFT и небольшие коллекции",items:[14,15,16,17,18,19,20]},
  {name:"COLLECTOR",icon:"🎨",price:800,desc:"Подборка недорогих коллекционных NFT",items:[14,15,16,17,18,19,20]},
  {name:"ART DROP",icon:"🖼️",price:1600,desc:"Цифровое искусство и коллекционные серии",items:[13,14,15,17,18,19,20]},
@@ -3401,9 +3394,9 @@ const DAILY_CASE_COOLDOWN=
 const dailyPrizes=[
  {type:"item",id:"daily-teddy",name:"Мишка",collection:"Telegram Gifts",icon:"🧸",value:20,stars:15,rarity:"Обычный",weight:5},
  {type:"item",id:"daily-heart",name:"Сердечко",collection:"Telegram Gifts",icon:"❤️",value:20,stars:15,rarity:"Обычный",weight:5},
- {type:"coins",amount:3,name:"3 монеты",icon:"🪙",value:3,weight:30},
- {type:"coins",amount:5,name:"5 монет",icon:"🪙",value:5,weight:30},
- {type:"coins",amount:10,name:"10 монет",icon:"🪙",value:10,weight:30}
+ {type:"coins",amount:3,name:"3 монеты",icon:"⭐",value:3,weight:30},
+ {type:"coins",amount:5,name:"5 монет",icon:"⭐",value:5,weight:30},
+ {type:"coins",amount:10,name:"10 монет",icon:"⭐",value:10,weight:30}
 ];
 function pickDailyPrize(){
  const total=dailyPrizes.reduce((sum,p)=>sum+(p.weight||1),0);
@@ -3566,22 +3559,11 @@ function storageSet(key,value){try{window.localStorage.setItem(key,value);return
    SAVE
 ========================= */
 
-function getCurrency(){return storageGet("skebobCurrency")==="USD"?"USD":"RUB";}
-function formatMoney(amount){
- const n=Number(amount)||0;
- return getCurrency()==="USD"?"$"+(n/80).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}):n.toLocaleString("ru-RU",{minimumFractionDigits:2,maximumFractionDigits:2})+" ₽";
-}
-function updateProfileCurrencyVisual(){const currency=getCurrency();const rub=document.querySelector("#profile .profile-currency-rub");const usd=document.querySelector("#profile .profile-currency-usd");if(rub){rub.classList.toggle("is-selected",currency==="RUB");rub.setAttribute("aria-pressed",currency==="RUB"?"true":"false");}if(usd){usd.classList.toggle("is-selected",currency==="USD");usd.setAttribute("aria-pressed",currency==="USD"?"true":"false");}}
-function setCurrency(value){
- const next=value==="USD"?"USD":"RUB";
- storageSet("skebobCurrency",next);
- updateProfileCurrencyVisual();
- try{render();}catch(error){console.warn("Currency display refresh:",error);}
- 
- try{if(typeof updateUpgradeInfo==="function")updateUpgradeInfo();}catch(error){console.warn(error);}
- try{if(typeof renderDailyTasks==="function")renderDailyTasks();}catch(error){console.warn(error);}
-}
-function loadCurrency(){updateProfileCurrencyVisual();}
+function getCurrency(){return "STAR";}
+function formatMoney(amount){return (Number(amount)||0).toLocaleString("ru-RU",{minimumFractionDigits:2,maximumFractionDigits:2})+" ⭐";}
+function updateProfileCurrencyVisual(){}
+function setCurrency(){}
+function loadCurrency(){}
 function save(){
 
 updateDailyTasks(false);
@@ -3752,7 +3734,7 @@ function renderDailyTasks(){
   const done=progress>=t.target,claimed=state.dailyTasks.claimed.includes(t.id);
   const cls=claimed?"is-claimed":done?"is-ready":"";
   const label=claimed?"✓ ПОЛУЧЕНО":done?"ЗАБРАТЬ НАГРАДУ":"";
-  return '<button type="button" class="daily-art-task '+cls+'" data-task-id="'+t.id+'" aria-label="'+t.title+'. Прогресс '+progress+' из '+t.target+'. '+(claimed?"Награда получена":done?"Забрать награду":"Задание не выполнено")+'" '+(claimed?'disabled':'')+'>'+label+(done||claimed?'<small>'+progress+'/'+t.target+(claimed?" · +50 🪙":" · 50 🪙")+'</small>':'')+'</button>';
+  return '<button type="button" class="daily-art-task '+cls+'" data-task-id="'+t.id+'" aria-label="'+t.title+'. Прогресс '+progress+' из '+t.target+'. '+(claimed?"Награда получена":done?"Забрать награду":"Задание не выполнено")+'" '+(claimed?'disabled':'')+'>'+label+(done||claimed?'<small>'+progress+'/'+t.target+(claimed?" · +50 ⭐":" · 50 ⭐")+'</small>':'')+'</button>';
  }).join("");
  list.onclick=function(event){
   const button=event.target.closest("button.daily-art-task[data-task-id]");
@@ -4119,7 +4101,7 @@ total/10000*100
 
 progressText=
 total.toLocaleString("ru-RU")+
-" / 10 000 🪙 до уровня ИГРОК";
+" / 10 000 ⭐ до уровня ИГРОК";
 
 }
 
@@ -4133,7 +4115,7 @@ Math.min(
 
 progressText=
 total.toLocaleString("ru-RU")+
-" / 100 000 🪙 до VIP";
+" / 100 000 ⭐ до VIP";
 
 }
 
@@ -4168,7 +4150,7 @@ setText(
 Math.floor(
 state.stats.totalWon
 ).toLocaleString("ru-RU")+
-" 🪙"
+" ⭐"
 );
 
 setText(
@@ -4176,7 +4158,7 @@ setText(
 Math.floor(
 state.stats.bestWin
 ).toLocaleString("ru-RU")+
-" 🪙"
+" ⭐"
 );
 
 setText(
@@ -4219,12 +4201,12 @@ setText(
 Math.floor(
 state.stats.turnover
 ).toLocaleString("ru-RU")+
-" 🪙"
+" ⭐"
 );
 
 setText(
 "profileBalance",
-Number(state.balance).toLocaleString("ru-RU",{minimumFractionDigits:2,maximumFractionDigits:2})+" 🪙"
+Number(state.balance).toLocaleString("ru-RU",{minimumFractionDigits:2,maximumFractionDigits:2})+" ⭐"
 );
 
 }
@@ -4529,7 +4511,7 @@ function openDailyCase(){
    setTimeout(()=>{
     item.classList.add("winner");
     const finalText=prize.type==="coins"
-     ?`🏆 <b>+${prize.amount} 🪙 на баланс</b>`
+     ?`🏆 <b>+${prize.amount} ⭐ на баланс</b>`
      :`🏆 <b>${prize.name} добавлен в инвентарь!</b>`;
     const final=document.getElementById("dailyFinal");
     if(final)final.innerHTML=finalText;
@@ -4746,7 +4728,7 @@ b.classList.add(
 }
 
 const totalPrice=document.getElementById("totalPrice");
-if(totalPrice&&cases[selectedCase])totalPrice.textContent="Итого: "+(cases[selectedCase].price*qty)+" 🪙";
+if(totalPrice&&cases[selectedCase])totalPrice.textContent="Итого: "+(cases[selectedCase].price*qty)+" ⭐";
 
 }
 
@@ -4963,7 +4945,7 @@ ${won[i].name}
 </h3>
 
 <p class="price">
-${won[i].value} 🪙
+${won[i].value} ⭐
 </p>
 
 <button
@@ -5236,7 +5218,7 @@ x.value||0
 const count=
 state.inventory.length;
 
-if(!(await skebobDialog("confirm","Продать всё за "+total.toLocaleString("ru-RU")+" 🪙?")))return;
+if(!(await skebobDialog("confirm","Продать всё за "+total.toLocaleString("ru-RU")+" ⭐?")))return;
 
 state.balance+=total;
 
@@ -5292,7 +5274,7 @@ const values=document.getElementById("upgradeValues");
 const circle=document.getElementById("upgradeCircle");
 const commission=document.getElementById("commissionText");
 if(chanceText)chanceText.textContent=chance+"%";
-if(values)values.textContent=stake.toLocaleString("ru-RU")+" → "+Math.floor(stake*safeMultiplier).toLocaleString("ru-RU")+" 🪙";
+if(values)values.textContent=stake.toLocaleString("ru-RU")+" → "+Math.floor(stake*safeMultiplier).toLocaleString("ru-RU")+" ⭐";
 if(circle)circle.style.setProperty("--chance",chance+"%");
 if(commission)commission.textContent="Шанс успеха: "+chance+"%";
 }
@@ -5340,7 +5322,7 @@ state.balance+=reward;
 state.stats.upgradeWins++;
 addDailyTaskProgress("upgrade");
 registerWin(reward);
-status.textContent="🏆 ПОБЕДА! +"+reward.toLocaleString("ru-RU")+" 🪙";
+status.textContent="🏆 ПОБЕДА! +"+reward.toLocaleString("ru-RU")+" ⭐";
 }else{
 status.textContent="❌ ПРОИГРЫШ. Попробуй ещё раз.";
 }
@@ -5391,7 +5373,7 @@ mineMultiplier
 ).toLocaleString(
 "ru-RU"
 )+
-" 🪙"
+" ⭐"
 :
 "ОТКРОЙ КЛЕТКУ";
 
@@ -5404,7 +5386,7 @@ btn.textContent=
 value.toLocaleString(
 "ru-RU"
 )+
-" 🪙";
+" ⭐";
 
 }
 
@@ -5793,7 +5775,7 @@ mineMultiplier
 ).toLocaleString(
 "ru-RU"
 )+
-" 🪙";
+" ⭐";
 
 updateMineStats();
 
@@ -5838,7 +5820,7 @@ document.getElementById(
 reward.toLocaleString(
 "ru-RU"
 )+
-" 🪙";
+" ⭐";
 
 updateMineStats();
 
@@ -5966,11 +5948,11 @@ function updatePlaneControls(){
  input.disabled=planeBusy;
  button.disabled=planeBusy;
  button.style.display=planeBusy?"none":"";
- button.textContent="✈️ ВЗЛЁТ ЗА "+value.toLocaleString("ru-RU")+" 🪙";
+ button.textContent="✈️ ВЗЛЁТ ЗА "+value.toLocaleString("ru-RU")+" ⭐";
 }
 function setPlaneBet(v,b){if(planeBusy)return;document.getElementById("planeBet").value=v==="max"?Math.max(10,Math.floor(state.balance)):v;document.querySelectorAll(".plane-presets button").forEach(x=>x.classList.remove("selected"));if(b)b.classList.add("selected");updatePlaneControls();}
 function changePlaneBet(d){if(planeBusy)return;const input=document.getElementById("planeBet"),x=Math.max(10,Math.floor(Number(input.value)||10)),step=x<100?10:100;input.value=d>0?x+step:Math.max(10,x-step);updatePlaneControls();}
-function updatePlaneMultiplier(){const txt="×"+planeMultiplier.toFixed(2).replace(".",",");const m=document.getElementById("planeMultiplier"),s=document.getElementById("planeStatMultiplier"),p=document.getElementById("planePotential");if(m)m.textContent=txt;if(s)s.textContent=txt;if(p)p.textContent=Math.floor(planeBet*planeMultiplier).toLocaleString("ru-RU")+" 🪙";updatePlaneControls();}
+function updatePlaneMultiplier(){const txt="×"+planeMultiplier.toFixed(2).replace(".",",");const m=document.getElementById("planeMultiplier"),s=document.getElementById("planeStatMultiplier"),p=document.getElementById("planePotential");if(m)m.textContent=txt;if(s)s.textContent=txt;if(p)p.textContent=Math.floor(planeBet*planeMultiplier).toLocaleString("ru-RU")+" ⭐";updatePlaneControls();}
 function planeEvent(message){const e=document.getElementById("planeEvent");if(!e)return;e.textContent=message;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),750);}
 function resetPlaneVisual(){planeSim=null;plane2dPhase="ready";plane2dProgress=0;const p=document.getElementById("planeObject");if(p){p.className="plane-object";p.style.left="23%";p.style.bottom="43%";p.style.transform="rotate(-13deg) scale(1)";}const world=document.querySelector(".plane-world");if(world)world.style.setProperty("--flight-progress","0");const tokens=document.getElementById("planeTokenLayer");if(tokens)tokens.innerHTML="";const carrier=document.getElementById("landingCarrier");if(carrier)carrier.classList.remove("show");planeMultiplier=1;updatePlane3D(0,"ready");const d=document.getElementById("planeDistance"),a=document.getElementById("planeAltitude"),stage=document.getElementById("planeStage");if(d)d.textContent="0 м";if(a)a.textContent="2,5 м";if(stage)stage.textContent="ГОТОВ";updatePlaneMultiplier();}
 function planeMainAction(){if(planeBusy)return;startPlaneGame();}
@@ -5979,8 +5961,8 @@ function planeCashout(){
  planeInFlight=false;if(planeAnimationTimer)clearInterval(planeAnimationTimer);if(planeDecorTimer)clearInterval(planeDecorTimer);
  const reward=Math.min(Math.floor(planeBet*1.4),Math.floor(planeBet*planeMultiplier));state.balance+=reward;state.stats.planeWins++;addDailyTaskProgress("plane");registerWin(reward);plane2dPhase="landed";updatePlane3D(plane2dProgress,"landed");
  const stage=document.getElementById("planeStage"),status=document.getElementById("planeStatus"),obj=document.getElementById("planeObject");
- if(stage)stage.textContent="ПОСАДКА";if(status){status.style.color="#24cf78";status.innerHTML="🏆 ВЫ УСПЕЛИ ЗАБРАТЬ ВЫИГРЫШ!<br><b>+"+reward.toLocaleString("ru-RU")+" 🪙</b>";}if(obj){obj.classList.remove("flying");obj.style.transform="rotate(0deg)";}
- planeEvent("🏆 +"+reward.toLocaleString("ru-RU")+" 🪙");save();planeBusy=false;updatePlaneControls();
+ if(stage)stage.textContent="ПОСАДКА";if(status){status.style.color="#24cf78";status.innerHTML="🏆 ВЫ УСПЕЛИ ЗАБРАТЬ ВЫИГРЫШ!<br><b>+"+reward.toLocaleString("ru-RU")+" ⭐</b>";}if(obj){obj.classList.remove("flying");obj.style.transform="rotate(0deg)";}
+ planeEvent("🏆 +"+reward.toLocaleString("ru-RU")+" ⭐");save();planeBusy=false;updatePlaneControls();
 }
 async function planeCrash(){
  if(!planeInFlight)return;planeInFlight=false;planeWaterImpactSound();const world=document.querySelector(".plane-world");if(world){world.classList.remove("splashing");void world.offsetWidth;world.classList.add("splashing");setTimeout(()=>world.classList.remove("splashing"),1900);}if(planeAnimationTimer)clearInterval(planeAnimationTimer);if(planeDecorTimer)clearInterval(planeDecorTimer);
@@ -5994,7 +5976,7 @@ function planeFinishLanding(outcome){
  const sim=planeSim;sim.phase=outcome;sim.showCarrier=true;if(outcome==="landed"){sim.x=.82;sim.y=.80;sim.angle=0;}else if(outcome==="short"){sim.x=.68;sim.y=.83;sim.angle=.12;}else if(outcome==="over"){sim.x=.99;sim.y=.77;sim.angle=-.12;}else if(outcome==="rolloff"){sim.x=.99;sim.y=.88;sim.angle=.55;}updatePlane3D(1,outcome);
  const stage=document.getElementById("planeStage"),status=document.getElementById("planeStatus");
  let message="",reward=0;
- if(outcome==="landed"){reward=Math.floor(planeBet*planeMultiplier);state.balance+=reward;state.stats.planeWins++;addDailyTaskProgress("plane");registerWin(reward);message="🛬 ИДЕАЛЬНАЯ ПОСАДКА! +"+reward.toLocaleString("ru-RU")+" 🪙";planeEvent("🛬 ПОСАДКА!");}
+ if(outcome==="landed"){reward=Math.floor(planeBet*planeMultiplier);state.balance+=reward;state.stats.planeWins++;addDailyTaskProgress("plane");registerWin(reward);message="🛬 ИДЕАЛЬНАЯ ПОСАДКА! +"+reward.toLocaleString("ru-RU")+" ⭐";planeEvent("🛬 ПОСАДКА!");}
  else if(outcome==="rolloff"){message="⚠️ Самолёт коснулся палубы, но не успел остановиться и скатился за борт.";planeEvent("⚠️ НЕ УДЕРЖАЛСЯ!");}
  else if(outcome==="short"){message="↘ Самолёт не дотянул до палубы и приводнился перед авианосцем.";planeEvent("↘ НЕДОЛЁТ!");}
  else {message="↗ Самолёт перелетел палубу и не смог вернуться на посадочную полосу.";planeEvent("↗ ПЕРЕЛЁТ!");}
@@ -6139,8 +6121,8 @@ function updatePlinkoControls(){
  const input=document.getElementById("plinkoBet"),button=document.getElementById("plinkoPlayButton");
  const value=Math.max(10,Math.floor(Number(input.value)||10));input.value=value;plinkoBet=value;
  input.disabled=plinkoBusy;button.disabled=plinkoBusy;
- document.getElementById("plinkoBetStat").textContent=value.toLocaleString("ru-RU")+" 🪙";
- button.textContent=plinkoBusy?"🔴 ШАРИК ПАДАЕТ...":"🔴 БРОСИТЬ ШАР ЗА "+value.toLocaleString("ru-RU")+" 🪙";
+ document.getElementById("plinkoBetStat").textContent=value.toLocaleString("ru-RU")+" ⭐";
+ button.textContent=plinkoBusy?"🔴 ШАРИК ПАДАЕТ...":"🔴 БРОСИТЬ ШАР ЗА "+value.toLocaleString("ru-RU")+" ⭐";
 }
 function setPlinkoBet(value,button){
  if(plinkoBusy)return;document.getElementById("plinkoBet").value=value==="max"?Math.max(10,Math.floor(state.balance)):value;
@@ -6190,7 +6172,7 @@ async function startPlinkoGame(){
  if(reward>bet){state.stats.plinkoWins++;registerWin(reward);}
  save();
  document.getElementById("plinkoReturn").textContent="x"+multiplier.toLocaleString("ru-RU");
- document.getElementById("plinkoResult").innerHTML=reward>bet?"🏆 ВЫИГРЫШ: <b>+"+reward.toLocaleString("ru-RU")+" 🪙</b>":"🎯 Выпало x"+multiplier.toLocaleString("ru-RU")+" · возврат "+reward.toLocaleString("ru-RU")+" 🪙";
+ document.getElementById("plinkoResult").innerHTML=reward>bet?"🏆 ВЫИГРЫШ: <b>+"+reward.toLocaleString("ru-RU")+" ⭐</b>":"🎯 Выпало x"+multiplier.toLocaleString("ru-RU")+" · возврат "+reward.toLocaleString("ru-RU")+" ⭐";
  plinkoBusy=false;updatePlinkoControls();
 }
 function initPlinko(){renderPlinkoBoard();updatePlinkoControls();}
@@ -6208,26 +6190,26 @@ function raceTone(freq,duration=.07,volume=.035){if(!raceSound)return;try{const 
 function raceCarSvg(car){return '<svg viewBox="0 0 160 82" role="img" aria-label="'+car.name+'"><defs><linearGradient id="body'+car.number+'" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".72"/><stop offset=".24" stop-color="'+car.color+'"/><stop offset=".78" stop-color="'+car.color+'"/><stop offset="1" stop-color="#171b22"/></linearGradient><linearGradient id="glass'+car.number+'" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4fcff"/><stop offset="1" stop-color="'+car.glass+'"/></linearGradient></defs><ellipse cx="81" cy="69" rx="67" ry="8" fill="#000" opacity=".55"/><path d="M13 52 L20 39 Q26 35 43 33 L57 16 Q62 10 78 10 L111 13 Q121 15 132 34 L145 41 L151 54 L147 63 L12 63 Z" fill="url(#body'+car.number+')" stroke="#10151b" stroke-width="3"/><path d="M51 32 L64 17 Q68 14 79 14 L91 15 L94 32 Z M99 16 L111 18 Q118 20 126 33 L98 32 Z" fill="url(#glass'+car.number+')" stroke="#26313c" stroke-width="2"/><path d="M95 14 L97 34" stroke="#202832" stroke-width="3"/><path d="M23 43 Q46 37 66 39 L130 39" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2"/><path d="M16 51 L30 48 L27 55 L14 57Z" fill="#fff4c7"/><path d="M137 45 L148 49 L148 55 L137 53Z" fill="#ff3649"/><path d="M39 61 L121 61" stroke="#fff" stroke-opacity=".35" stroke-width="2"/><circle cx="43" cy="61" r="13" fill="#080b10" stroke="#8c98a4" stroke-width="3"/><circle cx="43" cy="61" r="5" fill="#c8d0d7"/><circle cx="119" cy="61" r="13" fill="#080b10" stroke="#8c98a4" stroke-width="3"/><circle cx="119" cy="61" r="5" fill="#c8d0d7"/><path d="M69 46 L103 46 L99 55 L69 55Z" fill="#101820" opacity=".7"/><text x="85" y="53" font-size="11" font-weight="900" text-anchor="middle" fill="#fff">'+car.number+'</text><path d="M21 35 L12 31 L8 35 L16 42 M131 34 L145 30 L150 34 L141 42" fill="none" stroke="#171b22" stroke-width="4"/></svg>'}
 function renderRaceLanes(){const box=document.getElementById("raceLanes");box.innerHTML="";RACE_RUNNERS.forEach((r,i)=>{const lane=document.createElement("div");lane.className="race-lane";lane.innerHTML='<span class="race-runner" id="raceRunner'+i+'">'+raceCarSvg(r)+'</span>';box.appendChild(lane)})}
 function selectRace(i,b){if(raceBusy)return;raceChoice=i;document.querySelectorAll(".race-picks button").forEach(x=>x.classList.remove("active"));if(b)b.classList.add("active");document.getElementById("racePickStat").textContent=RACE_RUNNERS[i].icon+" №"+(i+1)}
-function updateRaceControls(){const input=document.getElementById("raceBet"),btn=document.getElementById("racePlayButton"),v=Math.max(10,Math.floor(Number(input.value)||10));input.value=v;raceBet=v;input.disabled=raceBusy;btn.disabled=raceBusy;document.getElementById("raceBetStat").textContent=v.toLocaleString("ru-RU")+" 🪙";btn.textContent=raceBusy?"🏁 ГОНКА ИДЁТ...":"🏁 НАЧАТЬ ГОНКУ ЗА "+v.toLocaleString("ru-RU")+" 🪙"}
+function updateRaceControls(){const input=document.getElementById("raceBet"),btn=document.getElementById("racePlayButton"),v=Math.max(10,Math.floor(Number(input.value)||10));input.value=v;raceBet=v;input.disabled=raceBusy;btn.disabled=raceBusy;document.getElementById("raceBetStat").textContent=v.toLocaleString("ru-RU")+" ⭐";btn.textContent=raceBusy?"🏁 ГОНКА ИДЁТ...":"🏁 НАЧАТЬ ГОНКУ ЗА "+v.toLocaleString("ru-RU")+" ⭐"}
 function setRaceBet(v,b){if(raceBusy)return;document.getElementById("raceBet").value=v==="max"?Math.max(10,Math.floor(state.balance)):v;document.querySelectorAll(".race-presets button").forEach(x=>x.classList.remove("selected"));if(b)b.classList.add("selected");updateRaceControls()}
 function changeRaceBet(d){if(raceBusy)return;const x=document.getElementById("raceBet"),v=Math.max(10,Math.floor(Number(x.value)||10)),step=v<100?10:100;x.value=d>0?v+step:Math.max(10,v-step);updateRaceControls()}
 function toggleRaceSound(){raceSound=!raceSound;document.getElementById("raceSoundButton").textContent=raceSound?"🔊 ЗВУК ВКЛ":"🔇 ЗВУК ВЫКЛ";if(raceSound)raceTone(660,.12)}
 async function startRaceGame(){if(raceBusy)return;const bet=Math.floor(Number(document.getElementById("raceBet").value));if(!Number.isFinite(bet)||bet<10||bet>state.balance){alert("Недостаточно монет или неверная ставка.");return}
 raceBusy=true;state.balance-=bet;addTurnover(bet);state.stats.raceGames++;save();updateRaceControls();renderRaceLanes();const runners=RACE_RUNNERS.map((_,i)=>document.getElementById("raceRunner"+i)),track=document.getElementById("raceTrack"),result=document.getElementById("raceResult");result.textContent="🏎️ Машины на стартовой решётке...";await raceWait(700);result.textContent="3... 2... 1... СТАРТ!";raceTone(440,.15);await raceWait(350);raceTone(700,.15);track.classList.add("running");const winner=Math.floor(Math.random()*4),progress=[0,0,0,0],speed=RACE_RUNNERS.map(()=>.95+Math.random()*.18);
 for(let tick=0;tick<62;tick++){for(let i=0;i<4;i++){const surge=Math.random()*.72+(i===winner?.85:0);progress[i]=Math.min(100,progress[i]+speed[i]+surge);runners[i].style.left="calc("+Math.min(94,progress[i])+"% - 8px)"}raceTone(115+Math.random()*55,.025,.009);await raceWait(75);if(progress[winner]>=100)break}
-track.classList.remove("running");const won=winner===raceChoice,reward=won?bet*2:0;if(won){state.balance+=reward;state.stats.raceWins++;addDailyTaskProgress("race");registerWin(reward)}save();result.style.color=won?"#24cf78":"#e34b55";result.innerHTML=won?"🏆 ПОБЕДА! "+RACE_RUNNERS[winner].name+" <b>+"+reward.toLocaleString("ru-RU")+" 🪙</b>":"😢 Победила "+RACE_RUNNERS[winner].name+". Ставка проиграна.";raceTone(won?880:130,.35,.06);raceBusy=false;updateRaceControls()}
+track.classList.remove("running");const won=winner===raceChoice,reward=won?bet*2:0;if(won){state.balance+=reward;state.stats.raceWins++;addDailyTaskProgress("race");registerWin(reward)}save();result.style.color=won?"#24cf78":"#e34b55";result.innerHTML=won?"🏆 ПОБЕДА! "+RACE_RUNNERS[winner].name+" <b>+"+reward.toLocaleString("ru-RU")+" ⭐</b>":"😢 Победила "+RACE_RUNNERS[winner].name+". Ставка проиграна.";raceTone(won?880:130,.35,.06);raceBusy=false;updateRaceControls()}
 function initRace(){renderRaceLanes();updateRaceControls();selectRace(0,document.querySelector(".race-picks button"))}
  
 /* CASE BATTLES */
 let battleMode=2,battleRule="high",battleBusy=false;
 function initBattles(){
  const sel=document.getElementById("battleCase");if(!sel)return;
- sel.innerHTML=cases.map((c,i)=>'<option value="'+i+'">'+c.icon+' '+c.name+' — '+c.price.toLocaleString("ru-RU")+' 🪙</option>').join("");
+ sel.innerHTML=cases.map((c,i)=>'<option value="'+i+'">'+c.icon+' '+c.name+' — '+c.price.toLocaleString("ru-RU")+' ⭐</option>').join("");
  sel.addEventListener("change",updateBattleInfo);document.getElementById("battleRounds").addEventListener("change",updateBattleInfo);updateBattleInfo();
 }
 function setBattleMode(n){if(battleBusy)return;battleMode=n;document.getElementById("battleMode2").classList.toggle("active",n===2);document.getElementById("battleMode3").classList.toggle("active",n===3);document.getElementById("battleBots").textContent=n-1;}
 function setBattleRule(rule){if(battleBusy)return;battleRule=rule;document.getElementById("battleRuleHigh").classList.toggle("active",rule==="high");document.getElementById("battleRuleLow").classList.toggle("active",rule==="low");}
-function updateBattleInfo(){const c=cases[Number(document.getElementById("battleCase").value)||0],rounds=Number(document.getElementById("battleRounds").value)||1;document.getElementById("battleCost").textContent=(c.price*rounds).toLocaleString("ru-RU")+" 🪙";document.getElementById("battleBalance").textContent=Math.floor(state.balance).toLocaleString("ru-RU")+" 🪙";document.getElementById("battleStart").disabled=battleBusy||c.price*rounds>state.balance;}
+function updateBattleInfo(){const c=cases[Number(document.getElementById("battleCase").value)||0],rounds=Number(document.getElementById("battleRounds").value)||1;document.getElementById("battleCost").textContent=(c.price*rounds).toLocaleString("ru-RU")+" ⭐";document.getElementById("battleBalance").textContent=Math.floor(state.balance).toLocaleString("ru-RU")+" ⭐";document.getElementById("battleStart").disabled=battleBusy||c.price*rounds>state.balance;}
 function battleWait(ms){return new Promise(resolve=>setTimeout(resolve,ms));}
 async function startCaseBattle(){
  if(battleBusy)return;
@@ -6238,24 +6220,24 @@ async function startCaseBattle(){
  const players=[{name:"ТЫ",icon:"😎",total:0,drops:[]},{name:"БОТ MAX",icon:"🤖",total:0,drops:[]}];
  if(battleMode===3)players.push({name:"БОТ PRO",icon:"👾",total:0,drops:[]});
  const arena=document.getElementById("battleArena"),playersBox=document.getElementById("battlePlayers"),log=document.getElementById("battleRoundsLog"),out=document.getElementById("battleOutcome");
- arena.classList.remove("hidden");out.innerHTML="";log.innerHTML="";playersBox.innerHTML=players.map((p,i)=>'<div class="battle-player" id="battlePlayer'+i+'"><div class="avatar">'+p.icon+'</div><strong>'+p.name+'</strong><div class="battle-total" id="battleTotal'+i+'">0 🪙</div><div class="battle-drop" id="battleDrops'+i+'">Готовится...</div></div>').join("");
+ arena.classList.remove("hidden");out.innerHTML="";log.innerHTML="";playersBox.innerHTML=players.map((p,i)=>'<div class="battle-player" id="battlePlayer'+i+'"><div class="avatar">'+p.icon+'</div><strong>'+p.name+'</strong><div class="battle-total" id="battleTotal'+i+'">0 ⭐</div><div class="battle-drop" id="battleDrops'+i+'">Готовится...</div></div>').join("");
  for(let round=0;round<rounds;round++){
   const row=document.createElement("div");row.className="battle-round";row.innerHTML='<div class="battle-round-title">🎁 РАУНД '+(round+1)+' / '+rounds+'</div><div class="battle-log"></div>';log.appendChild(row);
   const roundLog=row.querySelector(".battle-log");
   for(let i=0;i<players.length;i++){
    const itemIndex=c.items[Math.floor(Math.random()*c.items.length)],prize=prizes[itemIndex],drop={...prize,id:Date.now()+round*10+i};
    players[i].drops.push(drop);players[i].total+=Number(prize.value)||0;
-   const cell=document.createElement("div");cell.innerHTML='<div style="font-size:23px">'+players[i].icon+'</div><b>'+prize.icon+' '+prize.name+'</b><br><span style="color:var(--gold)">'+prize.value.toLocaleString("ru-RU")+' 🪙</span>';roundLog.appendChild(cell);
-   document.getElementById("battleTotal"+i).textContent=players[i].total.toLocaleString("ru-RU")+" 🪙";document.getElementById("battleDrops"+i).textContent=players[i].drops.length+" предмет(ов)";
+   const cell=document.createElement("div");cell.innerHTML='<div style="font-size:23px">'+players[i].icon+'</div><b>'+prize.icon+' '+prize.name+'</b><br><span style="color:var(--gold)">'+prize.value.toLocaleString("ru-RU")+' ⭐</span>';roundLog.appendChild(cell);
+   document.getElementById("battleTotal"+i).textContent=players[i].total.toLocaleString("ru-RU")+" ⭐";document.getElementById("battleDrops"+i).textContent=players[i].drops.length+" предмет(ов)";
    await battleWait(360);
   }
  }
  const best=Math[battleRule==="high"?"max":"min"](...players.map(p=>p.total)),leaders=players.filter(p=>p.total===best),winner=leaders[Math.floor(Math.random()*leaders.length)],pool=players.flatMap(p=>p.drops),poolValue=pool.reduce((sum,p)=>sum+(Number(p.value)||0),0);
  if(winner===players[0]){
   state.inventory.push(...pool.map((p,i)=>({...p,id:Date.now()+i+100})));registerWin(poolValue);
-  out.innerHTML='<div class="battle-result"><div style="font-size:42px">🏆</div><h2>ТЫ ПОБЕДИЛ!</h2><p>Ты забираешь все '+pool.length+' предметов батла на сумму <b class="orange">'+poolValue.toLocaleString("ru-RU")+' 🪙</b></p></div>';
+  out.innerHTML='<div class="battle-result"><div style="font-size:42px">🏆</div><h2>ТЫ ПОБЕДИЛ!</h2><p>Ты забираешь все '+pool.length+' предметов батла на сумму <b class="orange">'+poolValue.toLocaleString("ru-RU")+' ⭐</b></p></div>';
  }else{
-  out.innerHTML='<div class="battle-result"><div style="font-size:42px">🤖</div><h2>'+winner.name+' ПОБЕДИЛ</h2><p>Бот забирает весь банк. В этот раз твои предметы ушли победителю.</p><p>Твой результат: '+players[0].total.toLocaleString("ru-RU")+' 🪙 · Победитель: '+best.toLocaleString("ru-RU")+' 🪙</p></div>';
+  out.innerHTML='<div class="battle-result"><div style="font-size:42px">🤖</div><h2>'+winner.name+' ПОБЕДИЛ</h2><p>Бот забирает весь банк. В этот раз твои предметы ушли победителю.</p><p>Твой результат: '+players[0].total.toLocaleString("ru-RU")+' ⭐ · Победитель: '+best.toLocaleString("ru-RU")+' ⭐</p></div>';
  }
  if(leaders.length>1)out.innerHTML+='<p class="small">🤝 Ничья по сумме! Победитель выбран случайно среди лидеров.</p>';
  save();battleBusy=false;updateBattleInfo();
@@ -6266,8 +6248,8 @@ let slotsBusy=false,slotsBest=0;
 function updateSlotsControls(){
  const input=document.getElementById("slotsBet"),btn=document.getElementById("slotsSpin");if(!input)return;
  const bet=Math.max(10,Math.floor(Number(input.value)||10));input.value=bet;
- document.getElementById("slotsBetStat").textContent=bet.toLocaleString("ru-RU")+" 🪙";
- btn.disabled=slotsBusy||bet>state.balance;btn.textContent=slotsBusy?"🎰 КРУТЯТСЯ...":"🎰 КРУТИТЬ ЗА "+bet.toLocaleString("ru-RU")+" 🪙";
+ document.getElementById("slotsBetStat").textContent=bet.toLocaleString("ru-RU")+" ⭐";
+ btn.disabled=slotsBusy||bet>state.balance;btn.textContent=slotsBusy?"🎰 КРУТЯТСЯ...":"🎰 КРУТИТЬ ЗА "+bet.toLocaleString("ru-RU")+" ⭐";
 }
 function setSlotsBet(v){if(slotsBusy)return;document.getElementById("slotsBet").value=v==="max"?Math.max(10,Math.floor(state.balance)):v;updateSlotsControls()}
 function changeSlotsBet(d){if(slotsBusy)return;const x=document.getElementById("slotsBet"),v=Math.max(10,Math.floor(Number(x.value)||10));x.value=Math.max(10,v+(d>0?10:-10));updateSlotsControls()}
@@ -6319,7 +6301,7 @@ async function spinSlots(){
  await Promise.all(reels.map((reel,i)=>spinOneSlotReel(reel,result[i],i*520)));
  const mult=slotPayout(result),reward=Math.floor(bet*mult);
  if(reward){state.balance+=reward;registerWin(reward);state.stats.slotsWins=(state.stats.slotsWins||0)+1;slotsBest=Math.max(slotsBest,mult);playSlotSound(mult>=8?"jackpot":"win") }
- document.getElementById("slotsWinStat").textContent=reward?"+"+reward.toLocaleString("ru-RU")+" 🪙":"0 🪙";
+ document.getElementById("slotsWinStat").textContent=reward?"+"+reward.toLocaleString("ru-RU")+" ⭐":"0 ⭐";
  document.getElementById("slotsBestStat").textContent="x"+slotsBest;
  document.getElementById("slotsMessage").textContent=reward?"🎉 "+result.join(" ")+" — ВЫИГРЫШ x"+mult+"!":"😢 "+result.join(" ")+" — в следующий раз повезёт!";
  save();slotsBusy=false;updateSlotsControls()
@@ -6436,7 +6418,7 @@ async function playDice(){
  if(state.balance<bet){document.getElementById("diceResult").textContent="Недостаточно монет для ставки.";return}
  diceBusy=true;state.balance-=bet;addTurnover(bet);save();render();
  const players=[{name:"ТЫ",avatar:"😎",you:true},...Array.from({length:count},()=>({name:diceNames[Math.floor(Math.random()*diceNames.length)],avatar:["🤖","🐸","👽","🥷","🦊","🐻"][Math.floor(Math.random()*6)]}))];
- const arena=document.getElementById("dicePlayers");document.getElementById("dicePot").textContent="БАНК: "+(bet*players.length).toLocaleString("ru-RU")+" 🪙";
+ const arena=document.getElementById("dicePlayers");document.getElementById("dicePot").textContent="БАНК: "+(bet*players.length).toLocaleString("ru-RU")+" ⭐";
  arena.innerHTML=players.map((p,i)=>'<div class="dice-seat" id="diceSeat'+i+'"><div class="dice-avatar">'+p.avatar+'</div><div class="dice-name">'+p.name+'</div><div class="dice-cubes" id="diceCubes'+i+'">🎲 🎲</div><div class="dice-total" id="diceTotal'+i+'">?</div></div>').join("");
  document.getElementById("diceResult").textContent="Кости летят...";
  for(let t=0;t<18;t++){if(t%2===0)diceRattleSound();players.forEach((p,i)=>{const el=document.getElementById("diceCubes"+i);el.innerHTML='<span class="dice-cube rolling">'+diceFaces[Math.floor(Math.random()*6)]+'</span><span class="dice-cube rolling">'+diceFaces[Math.floor(Math.random()*6)]+'</span>'});await new Promise(r=>setTimeout(r,75+t*9))}
@@ -6448,7 +6430,7 @@ async function playDice(){
  }while(winners.length>2);
  const winner=winners[Math.floor(Math.random()*winners.length)],pool=bet*players.length;
  document.getElementById("diceSeat"+players.indexOf(winner)).classList.add("winner");if(winner.you)state.balance+=pool;
- save();render();document.getElementById("diceResult").textContent=(winner.you?"🏆 ТЫ ПОБЕДИЛ!":"🤖 Победитель: "+winner.name)+" · "+max+" очков · "+(winner.you?"+"+pool.toLocaleString("ru-RU"):"банк забран")+" 🪙";
+ save();render();document.getElementById("diceResult").textContent=(winner.you?"🏆 ТЫ ПОБЕДИЛ!":"🤖 Победитель: "+winner.name)+" · "+max+" очков · "+(winner.you?"+"+pool.toLocaleString("ru-RU"):"банк забран")+" ⭐";
  diceBusy=false;
 }
 
@@ -6481,10 +6463,10 @@ let ttt=[],tttBetValue=0,tttActive=false,tttBotThinking=false;
 function tttStart(){const b=gameBet("tttBet");if(!b){alert("Нужна ставка от 100 и достаточно средств");return}state.balance-=b;addTurnover(b);tttBetValue=b;ttt=Array(9).fill("");tttActive=true;tttBotThinking=false;save();tttRender();document.getElementById("tttStatus").textContent="Твой ход — ❌";}
 function tttWinner(a){for(const [x,y,z] of [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]])if(a[x]&&a[x]===a[y]&&a[y]===a[z])return a[x];return a.every(Boolean)?"draw":""}
 function tttRender(){const g=document.getElementById("tttGrid");g.innerHTML="";ttt.forEach((v,i)=>{const b=document.createElement("button");b.textContent=v||"　";b.style.cssText="aspect-ratio:1;font-size:35px;border-radius:10px;background:var(--panel2);color:var(--text);border:1px solid var(--border)";b.disabled=!!v||!tttActive||tttBotThinking;b.onclick=()=>tttMove(i);g.appendChild(b)})}
-function tttFinish(w){tttActive=false;tttBotThinking=false;if(w==="X"){const n=gamePay(tttBetValue,2);document.getElementById("tttStatus").textContent="🏆 Ты победил! Выплата "+n+" 🪙"}else if(w==="draw"){state.balance+=tttBetValue;save();document.getElementById("tttStatus").textContent="Ничья — ставка возвращена."}else{save();document.getElementById("tttStatus").textContent="🤖 Бот победил. Попробуй ещё!"}tttRender()}
+function tttFinish(w){tttActive=false;tttBotThinking=false;if(w==="X"){const n=gamePay(tttBetValue,2);document.getElementById("tttStatus").textContent="🏆 Ты победил! Выплата "+n+" ⭐"}else if(w==="draw"){state.balance+=tttBetValue;save();document.getElementById("tttStatus").textContent="Ничья — ставка возвращена."}else{save();document.getElementById("tttStatus").textContent="🤖 Бот победил. Попробуй ещё!"}tttRender()}
 function tttMove(i){if(!tttActive||ttt[i])return;ttt[i]="X";let w=tttWinner(ttt);if(w){tttRender();tttFinish(w);return}let free=ttt.map((v,i)=>v? -1:i).filter(i=>i>=0);ttt[free[Math.floor(Math.random()*free.length)]]="O";w=tttWinner(ttt);tttRender();if(w)tttFinish(w);else document.getElementById("tttStatus").textContent="Твой ход — ❌"}
 
-function poolShot(){const b=gameBet("poolBet");if(!b){alert("Нужна ставка от 100");return}state.balance-=b;const a=+document.getElementById("poolAngle").value,p=+document.getElementById("poolPower").value;const chance=Math.max(5,65-Math.abs(a-90)*.45-Math.abs(p-65)*.35);const ok=Math.random()*100<chance;const m=ok?(p>85?3:2):0;const w=m?gamePay(b,m):0;if(!m)save();poolAnimFrame=0;const tick=()=>{poolAnimFrame++;drawPoolScene(true,a,p);if(poolAnimFrame<30)requestAnimationFrame(tick)};requestAnimationFrame(tick);document.getElementById("poolResult").textContent=ok?"🎱 Шар в лузе! Выплата "+w+" 🪙":"Шар не попал в лузу. Попробуй ещё!";}
+function poolShot(){const b=gameBet("poolBet");if(!b){alert("Нужна ставка от 100");return}state.balance-=b;const a=+document.getElementById("poolAngle").value,p=+document.getElementById("poolPower").value;const chance=Math.max(5,65-Math.abs(a-90)*.45-Math.abs(p-65)*.35);const ok=Math.random()*100<chance;const m=ok?(p>85?3:2):0;const w=m?gamePay(b,m):0;if(!m)save();poolAnimFrame=0;const tick=()=>{poolAnimFrame++;drawPoolScene(true,a,p);if(poolAnimFrame<30)requestAnimationFrame(tick)};requestAnimationFrame(tick);document.getElementById("poolResult").textContent=ok?"🎱 Шар в лузе! Выплата "+w+" ⭐":"Шар не попал в лузу. Попробуй ещё!";}
 
 /* Detailed arcade scene renderers */
 function sceneCanvas(id){const c=document.getElementById(id);if(!c)return null;const w=c.clientWidth||640,h=Math.round(w*(id==="poolCanvas" ? .5625 : .625)),d=Math.min(window.devicePixelRatio||1,2);c.width=Math.round(w*d);c.height=Math.round(h*d);const x=c.getContext("2d");x.setTransform(d,0,0,d,0,0);return {c,x,w,h}}
@@ -6554,7 +6536,7 @@ function poolShot(){
   }
   drawPoolScene(true);frame++;
   if(frame<150&&poolBodies.some(q=>Math.hypot(q.vx,q.vy)>.0007))requestAnimationFrame(step);
-  else{const mult=potted>=2?3:potted===1?2:0,win=mult?gamePay(b,mult):0;if(!mult)save();document.getElementById("poolResult").textContent=potted?( "🎱 Забито шаров: "+potted+" · "+(win?"Выплата "+win+" 🪙":"Без выплаты")):"Шары остановились — лузы не достигнуты";}
+  else{const mult=potted>=2?3:potted===1?2:0,win=mult?gamePay(b,mult):0;if(!mult)save();document.getElementById("poolResult").textContent=potted?( "🎱 Забито шаров: "+potted+" · "+(win?"Выплата "+win+" ⭐":"Без выплаты")):"Шары остановились — лузы не достигнуты";}
  };
  requestAnimationFrame(step);
 }
@@ -6681,7 +6663,7 @@ function poolResolveMatch(p,who){
  document.getElementById("poolResult").textContent=(p.length?"Забито шаров: "+p.length+". ":"Без забитых шаров. ")+(poolMatch.turn==="player"?"Твой ход.":"Ход бота…");
  if(poolMatch.turn==="bot")setTimeout(poolBotMove,650);else document.getElementById("poolHitBtn").disabled=false;
 }
-function poolEndMatch(who){poolRollSound(false);poolMatch.over=true;document.getElementById("poolHitBtn").disabled=true;if(who==="player"){const prize=gamePay(poolMatch.bet,2);document.getElementById("poolResult").textContent="Победа! Выплата "+prize+" 🪙"}else{save();document.getElementById("poolResult").textContent="Бот выиграл партию. Начни новую игру."}}
+function poolEndMatch(who){poolRollSound(false);poolMatch.over=true;document.getElementById("poolHitBtn").disabled=true;if(who==="player"){const prize=gamePay(poolMatch.bet,2);document.getElementById("poolResult").textContent="Победа! Выплата "+prize+" ⭐"}else{save();document.getElementById("poolResult").textContent="Бот выиграл партию. Начни новую игру."}}
 function poolBotMove(){
  if(!poolMatch||poolMatch.over||poolMatch.moving||poolMatch.turn!=="bot")return;
  const cue=poolBodies[0],r=.021,pockets=[[.035,.05],[.5,.05],[.965,.05],[.035,.95],[.5,.95],[.965,.95]];
@@ -6849,7 +6831,7 @@ function openResetProgressModal(){
  const overlay=document.createElement("div");overlay.id="resetProgressModal";
  overlay.style.cssText="position:fixed;inset:0;z-index:32012;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:18px";
  const panel=document.createElement("div");panel.style.cssText="width:100%;max-width:390px;background:var(--panel);color:var(--text);border:1px solid #c84a60;border-radius:18px;padding:20px;box-shadow:0 15px 50px #000b";
- panel.innerHTML='<h3 style="margin:0 0 8px;color:#ff7188">🧹 СБРОСИТЬ ПРОГРЕСС</h3><p style="font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 13px">Введи ник игрока. Будут сброшены баланс до стартовых 20 ₽, инвентарь, статистика и игровой прогресс. Сам аккаунт, никнейм и галочка останутся.</p><label for="resetProgressNickname" style="display:block;margin:0 0 6px;font-size:13px">Ник игрока</label><input id="resetProgressNickname" type="text" maxlength="18" autocomplete="off" placeholder="Введи ник игрока" style="width:100%;box-sizing:border-box;margin-bottom:12px"><div id="resetProgressConfirm" style="display:none;padding:11px;border:1px solid #a53c50;border-radius:11px;background:rgba(150,35,55,.12);font-size:13px;line-height:1.45;margin-bottom:12px">⚠️ Это действие необратимо. Точно сбросить весь игровой прогресс выбранного аккаунта?</div><div style="display:flex;gap:9px"><button type="button" class="secondary" id="resetProgressCancel" style="flex:1">ОТМЕНА</button><button type="button" class="goldbtn" id="resetProgressSubmit" style="flex:1;margin:0;background:linear-gradient(135deg,#c94a61,#791c32);color:#fff">ПРОВЕРИТЬ</button></div><p id="resetProgressStatus" role="status" style="min-height:18px;margin:12px 0 0;font-size:13px"></p>';
+ panel.innerHTML='<h3 style="margin:0 0 8px;color:#ff7188">🧹 СБРОСИТЬ ПРОГРЕСС</h3><p style="font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 13px">Введи ник игрока. Будут сброшены баланс до стартовых 20 ⭐, инвентарь, статистика и игровой прогресс. Сам аккаунт, никнейм и галочка останутся.</p><label for="resetProgressNickname" style="display:block;margin:0 0 6px;font-size:13px">Ник игрока</label><input id="resetProgressNickname" type="text" maxlength="18" autocomplete="off" placeholder="Введи ник игрока" style="width:100%;box-sizing:border-box;margin-bottom:12px"><div id="resetProgressConfirm" style="display:none;padding:11px;border:1px solid #a53c50;border-radius:11px;background:rgba(150,35,55,.12);font-size:13px;line-height:1.45;margin-bottom:12px">⚠️ Это действие необратимо. Точно сбросить весь игровой прогресс выбранного аккаунта?</div><div style="display:flex;gap:9px"><button type="button" class="secondary" id="resetProgressCancel" style="flex:1">ОТМЕНА</button><button type="button" class="goldbtn" id="resetProgressSubmit" style="flex:1;margin:0;background:linear-gradient(135deg,#c94a61,#791c32);color:#fff">ПРОВЕРИТЬ</button></div><p id="resetProgressStatus" role="status" style="min-height:18px;margin:12px 0 0;font-size:13px"></p>';
  overlay.appendChild(panel);document.body.appendChild(overlay);
  const close=()=>overlay.remove(),nick=panel.querySelector("#resetProgressNickname"),send=panel.querySelector("#resetProgressSubmit"),status=panel.querySelector("#resetProgressStatus"),confirmBox=panel.querySelector("#resetProgressConfirm");
  let confirmed=false;
@@ -7132,7 +7114,7 @@ function openMoneyGrantModal(){
  overlay.style.cssText="position:fixed;inset:0;z-index:32000;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:18px";
  const panel=document.createElement("div");
  panel.style.cssText="width:100%;max-width:380px;background:var(--panel);color:var(--text);border:1px solid var(--gold);border-radius:18px;padding:20px;box-shadow:0 15px 50px #000b";
- panel.innerHTML='<h3 style="margin:0 0 16px;color:var(--gold)">💰 ВЫДАТЬ ДЕНЬГИ</h3><label style="display:block;margin:0 0 6px;font-size:13px">Nickname игрока</label><input id="moneyGrantNickname" type="text" maxlength="18" autocomplete="off" placeholder="Введи nickname" style="width:100%;box-sizing:border-box;margin-bottom:13px"><label style="display:block;margin:0 0 6px;font-size:13px">Сумма в рублях (₽)</label><input id="moneyGrantAmount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Например, 500" style="width:100%;box-sizing:border-box;margin-bottom:15px"><div style="display:flex;gap:9px"><button type="button" class="secondary" id="moneyGrantCancel" style="flex:1">ОТМЕНА</button><button type="button" class="goldbtn" id="moneyGrantSubmit" style="flex:1">ВЫДАТЬ</button></div><p id="moneyGrantStatus" role="status" style="min-height:18px;margin:12px 0 0;font-size:13px"></p>';
+ panel.innerHTML='<h3 style="margin:0 0 16px;color:var(--gold)">💰 ВЫДАТЬ ДЕНЬГИ</h3><label style="display:block;margin:0 0 6px;font-size:13px">Nickname игрока</label><input id="moneyGrantNickname" type="text" maxlength="18" autocomplete="off" placeholder="Введи nickname" style="width:100%;box-sizing:border-box;margin-bottom:13px"><label style="display:block;margin:0 0 6px;font-size:13px">Сумма в рублях (⭐)</label><input id="moneyGrantAmount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Например, 500" style="width:100%;box-sizing:border-box;margin-bottom:15px"><div style="display:flex;gap:9px"><button type="button" class="secondary" id="moneyGrantCancel" style="flex:1">ОТМЕНА</button><button type="button" class="goldbtn" id="moneyGrantSubmit" style="flex:1">ВЫДАТЬ</button></div><p id="moneyGrantStatus" role="status" style="min-height:18px;margin:12px 0 0;font-size:13px"></p>';
  overlay.appendChild(panel);document.body.appendChild(overlay);
  const close=()=>overlay.remove();
  panel.querySelector("#moneyGrantCancel").addEventListener("click",close);
@@ -7147,7 +7129,7 @@ function openMoneyGrantModal(){
   try{
    const result=await window.skebobGrantMoney(nickname,amount);
    status.style.color="#65d995";
-   status.textContent="✅ Игроку "+result.player_nickname+" выдано "+Number(amount).toLocaleString("ru-RU")+" ₽. Новый баланс: "+Number(result.new_balance).toLocaleString("ru-RU")+" ₽";
+   status.textContent="✅ Игроку "+result.player_nickname+" выдано "+Number(amount).toLocaleString("ru-RU")+" ⭐. Новый баланс: "+Number(result.new_balance).toLocaleString("ru-RU")+" ⭐";
   }catch(error){
    status.style.color="#ff8585";status.textContent="Ошибка: "+(error?.message||"не удалось выдать деньги");
   }finally{button.disabled=false;button.textContent="ВЫДАТЬ";}
@@ -7177,7 +7159,7 @@ function openProfileLookupModal(){
    const online=player.is_online===true;
    const balance=Number(player.player_balance)||0;
    status.textContent="Профиль найден.";status.style.color="#65d995";
-   result.innerHTML='<div style="border:1px solid var(--border2);border-radius:13px;padding:12px;background:var(--panel2)"><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr><td style="padding:9px 4px;color:var(--muted)">Nickname</td><td style="padding:9px 4px;text-align:right;font-weight:900;overflow-wrap:anywhere">'+bjEscape(player.player_nickname)+'</td></tr><tr style="border-top:1px solid var(--border2)"><td style="padding:9px 4px;color:var(--muted)">Статус</td><td style="padding:9px 4px;text-align:right;font-weight:900;color:'+(online?"#65d995":"#ff8585")+'">'+(online?"🟢 В сети":"🔴 Не в сети")+'</td></tr><tr style="border-top:1px solid var(--border2)"><td style="padding:9px 4px;color:var(--muted)">Баланс</td><td style="padding:9px 4px;text-align:right;font-weight:900;color:var(--gold)">'+balance.toLocaleString("ru-RU",{maximumFractionDigits:2})+' ₽</td></tr></tbody></table></div>';
+   result.innerHTML='<div style="border:1px solid var(--border2);border-radius:13px;padding:12px;background:var(--panel2)"><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr><td style="padding:9px 4px;color:var(--muted)">Nickname</td><td style="padding:9px 4px;text-align:right;font-weight:900;overflow-wrap:anywhere">'+bjEscape(player.player_nickname)+'</td></tr><tr style="border-top:1px solid var(--border2)"><td style="padding:9px 4px;color:var(--muted)">Статус</td><td style="padding:9px 4px;text-align:right;font-weight:900;color:'+(online?"#65d995":"#ff8585")+'">'+(online?"🟢 В сети":"🔴 Не в сети")+'</td></tr><tr style="border-top:1px solid var(--border2)"><td style="padding:9px 4px;color:var(--muted)">Баланс</td><td style="padding:9px 4px;text-align:right;font-weight:900;color:var(--gold)">'+balance.toLocaleString("ru-RU",{maximumFractionDigits:2})+' ⭐</td></tr></tbody></table></div>';
   }catch(error){status.style.color="#ff8585";status.textContent="Ошибка: "+(error?.message||"не удалось проверить профиль");}
   finally{button.disabled=false;button.textContent="ПРОВЕРИТЬ";}
  });
@@ -7280,7 +7262,7 @@ async function changeNickname(){
 
 function skebobTapResetIfReady(){const t=state.tapGame,now=Date.now();if(t.cooldownUntil&&now>=t.cooldownUntil){t.hourStartedAt=0;t.earnedCents=0;t.cooldownUntil=0;}else if(!t.cooldownUntil&&t.hourStartedAt&&now-t.hourStartedAt>=SKEBOB_TAP_WINDOW){t.hourStartedAt=0;t.earnedCents=0;}}
 function formatTapCountdown(ms){const s=Math.max(0,Math.ceil(ms/1000));return Math.floor(s/60)+" мин. "+(s%60)+" сек.";}
-function renderSkebobTap(){skebobTapResetIfReady();const t=state.tapGame,earned=document.getElementById("tapEarned"),remaining=document.getElementById("tapRemaining"),status=document.getElementById("tapStatus"),timer=document.getElementById("tapTimer"),button=document.getElementById("tapButton"),usd=getCurrency()==="USD",unit=usd?"$":"₽",rate=usd?"0.000125":"0,01",earnedValue=t.earnedCents/100,remainingValue=(SKEBOB_TAP_LIMIT-t.earnedCents)/100,formatTapValue=value=>usd?"$"+(value/80).toFixed(6):value.toFixed(2).replace(".",",")+" ₽";if(earned)earned.textContent=formatTapValue(earnedValue);if(remaining)remaining.textContent=formatTapValue(remainingValue);const locked=!!t.cooldownUntil&&Date.now()<t.cooldownUntil;if(button)button.disabled=locked;if(status)status.textContent=locked?"⏳ Часовой лимит достигнут! Возвращайся после окончания таймера.":"Каждый тап приносит "+rate+" "+(usd?"виртуального доллара.":"виртуального рубля.");if(timer)timer.textContent=locked?"До обновления лимита: "+formatTapCountdown(t.cooldownUntil-Date.now()):"Часовой лимит: "+(usd?"$0.062500":"5,00 ₽")+". Обновляется через час после первого тапа.";}
+function renderSkebobTap(){skebobTapResetIfReady();const t=state.tapGame,earned=document.getElementById("tapEarned"),remaining=document.getElementById("tapRemaining"),status=document.getElementById("tapStatus"),timer=document.getElementById("tapTimer"),button=document.getElementById("tapButton"),earnedValue=t.earnedCents/100,remainingValue=(SKEBOB_TAP_LIMIT-t.earnedCents)/100,formatTapValue=value=>value.toFixed(2).replace(".",",")+" ⭐";if(earned)earned.textContent=formatTapValue(earnedValue);if(remaining)remaining.textContent=formatTapValue(remainingValue);const locked=!!t.cooldownUntil&&Date.now()<t.cooldownUntil;if(button)button.disabled=locked;if(status)status.textContent=locked?"⏳ Часовой лимит достигнут! Возвращайся после окончания таймера.":"Каждый тап приносит 0,01 виртуальной звезды.";if(timer)timer.textContent=locked?"До обновления лимита: "+formatTapCountdown(t.cooldownUntil-Date.now()):"Часовой лимит: 5,00 ⭐. Обновляется через час после первого тапа.";}
 function handleSkebobTap(){
  try{
   if(!state||typeof state!=="object")throw new Error("Игровое состояние не загружено");
@@ -7303,7 +7285,7 @@ function handleSkebobTap(){
   ["balance","dashboardBalance"].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=balanceText;});
   renderSkebobTap();
   const status=document.getElementById("tapStatus");
-  if(status){status.textContent=persisted?"✅ +0,01 ₽ за тап добавлено к балансу!":"Тап засчитан, но сохранение браузера недоступно.";}
+  if(status){status.textContent=persisted?"✅ +0,01 ⭐ за тап добавлено к балансу!":"Тап засчитан, но сохранение браузера недоступно.";}
   return true;
  }catch(error){
   console.error("SKEBOB TAP error:",error);
@@ -7345,7 +7327,7 @@ window.refreshLeaderboard=async function(){
    const nickname=document.createElement("span");nickname.className="leaderboard-nickname";nickname.textContent=player.player_nickname||"Игрок";if(player.player_badge){const badge=document.createElement("span");badge.className="skebob-verified verified-"+player.player_badge;badge.textContent="✓";badge.title=player.player_badge==="green"?"media-partner":player.player_badge==="blue"?"официальный аккаунт":"vip";badge.setAttribute("aria-label",badge.title);badge.addEventListener("click",()=>alert(badge.title));nickname.appendChild(badge);}
    const amount=document.createElement("span");amount.className="leaderboard-amount";
    const value=Number(player.player_balance)||0;
-   amount.textContent=new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(value)+" 🪙";
+   amount.textContent=new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(value)+" ⭐";
    row.append(place,nickname,amount);rowsBox.appendChild(row);
   });
   return true;
@@ -7360,29 +7342,7 @@ window.refreshLeaderboard=async function(){
 </script>
 
 
-<div id="skebobAuthModal" style="display:none;position:fixed;inset:0;z-index:50000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:20px;overflow:auto">
- <div style="width:100%;max-width:440px;box-sizing:border-box;background:var(--panel);color:var(--text);border:2px solid var(--gold);border-radius:22px;padding:24px;box-shadow:0 18px 60px #000c">
-  <div style="text-align:center;font-size:38px;margin-bottom:8px">🍂</div>
-  <h2 id="authTitle" style="margin:0 0 10px;text-align:center;color:var(--gold)">С ВОЗВРАЩЕНИЕМ!</h2>
-  <p id="authDescription" class="small" style="text-align:center;margin:0 0 20px">Введи свой ник и пароль, чтобы продолжить игру.</p>
-  <form id="skebobAuthForm">
-   <label for="authNickname">Игровой ник</label>
-   <input id="authNickname" type="text" maxlength="18" autocomplete="username" placeholder="Твой ник" required style="width:100%;box-sizing:border-box;margin:7px 0 14px">
-   <label for="authPassword">Пароль</label>
-   <input id="authPassword" type="password" minlength="6" autocomplete="current-password" placeholder="Пароль (от 6 символов)" required style="width:100%;box-sizing:border-box;margin:7px 0 14px">
-   <div id="authRepeatWrap" style="display:none">
-    <label for="authPasswordRepeat">Повтори пароль</label>
-    <input id="authPasswordRepeat" type="password" minlength="6" autocomplete="new-password" placeholder="Повтори пароль" style="width:100%;box-sizing:border-box;margin:7px 0 14px">
-   </div>
-   <button id="authSubmit" class="goldbtn" type="submit" style="width:100%">ВОЙТИ В ИГРУ</button>
-  </form>
-  <button id="authModeToggle" type="button" class="secondary" style="width:100%;margin-top:12px">Нет аккаунта? Зарегистрироваться</button>
-  <p id="authMessage" role="status" style="min-height:22px;margin:14px 0 0;text-align:center;font-size:13px;overflow-wrap:anywhere"></p>
- </div>
-</div>
-
-<div id="skebobDialog" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:30000;background:rgba(0,0,0,.78);align-items:center;justify-content:center;padding:20px"><div style="width:100%;max-width:430px;background:var(--panel);color:var(--text);border:1px solid var(--gold);border-radius:22px;padding:24px;box-shadow:0 18px 60px #000b"><h2 data-dialog-title style="margin:0 0 16px;color:var(--gold)">Уведомление</h2><div data-dialog-message style="font-size:16px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere"></div><input data-dialog-input type="text" style="display:none;margin-top:16px"><div style="display:flex;gap:10px;justify-content:flex-end;margin-top:22px"><button data-dialog-cancel type="button" class="secondary">Отмена</button><button data-dialog-ok type="button" class="goldbtn" style="width:auto;min-width:110px;margin:0;padding:12px 20px">ОК</button></div></div></div>
-<script src="./supabase-auth.js?v=20" onload="if(typeof initSupabaseAuth==='function')initSupabaseAuth();"></script>
+<!-- Авторизация отключена: игра работает автономно. -->
 <script>window.addEventListener("load",()=>{if(typeof initNickname==="function")initNickname();});</script>
 
 <script>
@@ -7413,99 +7373,7 @@ window.refreshLeaderboard=async function(){
 })();;
 </script>
 
-<script>
-/* Telegram Stars top-up UI */
-(function(){
- "use strict";
- const topupButton=document.getElementById("topupWithdrawButton");
- if(!topupButton)return;
- const packages=[50,100,250,500,1000];
- let overlay=null,busy=false;
- function closeDialog(){if(overlay){overlay.remove();overlay=null;}busy=false;}
- topupButton.addEventListener("click",function(){
-  if(overlay)return;
-  overlay=document.createElement("div");
-  overlay.style.cssText="position:fixed;inset:0;z-index:32000;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:18px";
-  const panel=document.createElement("div");
-  panel.style.cssText="width:100%;max-width:390px;background:var(--panel,#191a20);color:var(--text,#fff);border:1px solid var(--gold,#f4c75e);border-radius:20px;padding:20px;box-shadow:0 18px 55px #000b";
-  const title=document.createElement("h2");
-  title.textContent="⭐ ПОПОЛНЕНИЕ";
-  title.style.cssText="margin:0 0 8px;color:var(--gold,#f4c75e);text-align:center";
-  const subtitle=document.createElement("div");
-  subtitle.textContent="Выбери количество Telegram Stars. 1 ⭐ = 1,4 ₽";
-  subtitle.style.cssText="font-size:13px;color:var(--muted,#aaa);text-align:center;line-height:1.5;margin-bottom:14px";
-  const status=document.createElement("div");
-  status.style.cssText="min-height:22px;margin:10px 0;color:var(--gold,#f4c75e);font-size:13px;text-align:center;line-height:1.4";
-  const options=document.createElement("div");
-  options.style.cssText="display:grid;grid-template-columns:1fr 1fr;gap:9px";
-  const close=document.createElement("button");
-  close.type="button";close.textContent="ЗАКРЫТЬ";
-  close.style.cssText="width:100%;margin-top:12px;padding:12px;border-radius:11px;border:1px solid var(--border2,#444);background:var(--panel2,#292929);color:var(--text,#fff);font-weight:900";
-  close.addEventListener("click",closeDialog);
-  packages.forEach(function(stars){
-   const rubles=(stars*1.4).toLocaleString("ru-RU",{maximumFractionDigits:2});
-   const option=document.createElement("button");
-   option.type="button";
-   option.textContent=stars+" ⭐\n"+rubles+" ₽";
-   option.style.cssText="white-space:pre-line;min-height:64px;padding:10px 6px;border:1px solid var(--gold,#f4c75e);border-radius:12px;background:linear-gradient(145deg,#493819,#261b11);color:#ffe4a0;font-weight:900;font-size:15px";
-   option.addEventListener("click",async function(){
-    if(busy)return;
-    busy=true;
-    options.querySelectorAll("button").forEach(b=>b.disabled=true);
-    close.disabled=true;
-    status.textContent="Создаём счёт на "+stars+" ⭐…";
-    try{
-     if(!window.Telegram||!window.Telegram.WebApp||typeof window.Telegram.WebApp.openInvoice!=="function"){
-      throw new Error("Открой SKEBOB GAME через Telegram, чтобы оплатить звёздами.");
-     }
-     if(typeof window.skebobCreateStarsInvoice!=="function")throw new Error("Функция пополнения ещё не загружена. Обнови игру.");
-     const invoiceUrl=await window.skebobCreateStarsInvoice(stars);
-     const tg=window.Telegram.WebApp;
-     try{tg.openInvoice(invoiceUrl,async function(paymentStatus){
-      if(paymentStatus==="paid"){
-       status.textContent="Оплата получена! Проверяем начисление…";
-       try{
-        await new Promise(resolve=>setTimeout(resolve,1800));
-        const balance=await window.skebobRefreshAfterStarsPayment();
-        status.textContent="Успешно! Баланс обновлён: "+Number(balance).toLocaleString("ru-RU")+" ₽";
-       }catch(error){
-        status.textContent="Telegram подтвердил оплату. Баланс скоро обновится; перезайди в игру, если сумма пока не изменилась.";
-       }
-      }else if(paymentStatus==="cancelled"){
-       status.textContent="Оплата отменена. Деньги не списаны.";
-      }else if(paymentStatus==="failed"){
-       status.textContent="Не удалось завершить оплату. Попробуй ещё раз.";
-      }else{
-       status.textContent="Платёж обрабатывается. Баланс обновится после подтверждения Telegram.";
-      }
-      busy=false;
-      options.querySelectorAll("button").forEach(b=>b.disabled=false);
-      close.disabled=false;
-     });}catch(openError){
-      if(String(openError&&openError.message||openError).includes("WebAppMethodUnsupported")){
-       status.textContent="Открываем счёт через Telegram… После оплаты вернись в игру.";
-       busy=false;options.querySelectorAll("button").forEach(b=>b.disabled=false);close.disabled=false;
-       if(typeof tg.openTelegramLink==="function")tg.openTelegramLink(invoiceUrl);else window.location.href=invoiceUrl;
-       return;
-      }
-      throw openError;
-     }
-    }catch(error){
-     status.textContent=error&&error.message?error.message:"Не удалось создать счёт.";
-     busy=false;
-     options.querySelectorAll("button").forEach(b=>b.disabled=false);
-     close.disabled=false;
-    }
-   });
-   options.appendChild(option);
-  });
-  panel.append(title,subtitle,options,status,close);
-  overlay.appendChild(panel);
-  overlay.addEventListener("click",function(event){if(event.target===overlay&&!busy)closeDialog();});
-  document.body.appendChild(overlay);
- });
-})();
-</script>
+<!-- Покупки отключены: звёзды — только виртуальная игровая валюта. -->
 
 </body>
     </html>
