@@ -7319,7 +7319,7 @@ window.refreshLeaderboard=async function(){
   if(typeof window.skebobGetLeaderboard!=="function")throw new Error("Войди в аккаунт, чтобы посмотреть рейтинг.");
   const players=await window.skebobGetLeaderboard();
   rowsBox.replaceChildren();
-  if(!players.length){rowsBox.textContent="Пока нет игроков.";return;}
+  if(!players.length){rowsBox.textContent="Онлайн-рейтинг отключён в автономном режиме.";return;}
   players.forEach((player,index)=>{
    const row=document.createElement("div");row.className="leaderboard-row";
    const place=document.createElement("span");place.className="leaderboard-place";
