@@ -1965,8 +1965,8 @@ body.light #settings .reference-setting-row{background:linear-gradient(110deg,#6
  font-size:clamp(12px,2.5vw,22px)!important;font-weight:500!important;
  line-height:1!important;white-space:nowrap!important;pointer-events:none!important;
 }
-#settings .settings-currency-rub::after{content:"⭐ Рубли"!important}
-#settings .settings-currency-usd::after{content:"$ Доллары"!important}
+#settings .settings-currency-rub::after{content:"⭐ Звёзды"!important}
+#settings .settings-currency-usd::after{content:""!important}
 #settings .settings-currency-rub.is-selected,#settings .settings-currency-usd.is-selected{
  background:#9200dc!important;border-color:#d9a0ff!important;
 }
@@ -2370,10 +2370,10 @@ SKEBOB <span>CASINO</span>
 <section id="skebobTap" class="hidden">
  <h2>👆 SKEBOB TAP</h2>
  <div class="panel tap-panel">
-  <p class="small">Тапай и получай виртуальные рубли. За один тап — 0,01 ⭐. Часовой лимит — 5 ⭐.</p>
+  <p class="small">Тапай и получай виртуальные звёзды. За один тап — 0,01 ⭐. Часовой лимит — 5 ⭐.</p>
   <div class="tap-stats"><div><span>Заработано за час</span><strong id="tapEarned">0,00 ⭐</strong></div><div><span>Осталось до лимита</span><strong id="tapRemaining">5,00 ⭐</strong></div></div>
   <button id="tapButton" class="tap-main" type="button" onclick="return handleSkebobTap();">👆 ТАП!</button>
-  <div id="tapStatus" class="tap-status" aria-live="polite">Каждый тап приносит 0,01 виртуального рубля.</div>
+  <div id="tapStatus" class="tap-status" aria-live="polite">Каждый тап приносит 0,01 виртуальной звезды.</div>
   <div class="small" id="tapTimer"></div>
  </div>
 </section>
@@ -3554,6 +3554,7 @@ let dailyOpening=false;
 function storageGet(key){try{return window.localStorage.getItem(key)}catch(error){console.warn("Хранилище браузера недоступно:",error);return null}}
 function storageSet(key,value){try{window.localStorage.setItem(key,value);return true}catch(error){console.warn("Не удалось сохранить данные браузера:",error);return false}}
 
+#settings .settings-currency-rub,#settings .settings-currency-usd{display:none!important;pointer-events:none!important}
 /* =========================
    SAVE
 ========================= */
@@ -3572,7 +3573,7 @@ try{
 }catch(error){
  console.warn("Не удалось сохранить прогресс в этом браузере:",error);
 }
-try{if(window.skebobQueueSave)window.skebobQueueSave();}catch(error){console.warn("Supabase sync queue:",error);}
+try{if(window.skebobQueueSave)window.skebobQueueSave();}catch(error){console.warn("Local save queue:",error);}
 render();
 return saved;
 
@@ -7113,7 +7114,7 @@ function openMoneyGrantModal(){
  overlay.style.cssText="position:fixed;inset:0;z-index:32000;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:18px";
  const panel=document.createElement("div");
  panel.style.cssText="width:100%;max-width:380px;background:var(--panel);color:var(--text);border:1px solid var(--gold);border-radius:18px;padding:20px;box-shadow:0 15px 50px #000b";
- panel.innerHTML='<h3 style="margin:0 0 16px;color:var(--gold)">💰 ВЫДАТЬ ДЕНЬГИ</h3><label style="display:block;margin:0 0 6px;font-size:13px">Nickname игрока</label><input id="moneyGrantNickname" type="text" maxlength="18" autocomplete="off" placeholder="Введи nickname" style="width:100%;box-sizing:border-box;margin-bottom:13px"><label style="display:block;margin:0 0 6px;font-size:13px">Сумма в рублях (⭐)</label><input id="moneyGrantAmount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Например, 500" style="width:100%;box-sizing:border-box;margin-bottom:15px"><div style="display:flex;gap:9px"><button type="button" class="secondary" id="moneyGrantCancel" style="flex:1">ОТМЕНА</button><button type="button" class="goldbtn" id="moneyGrantSubmit" style="flex:1">ВЫДАТЬ</button></div><p id="moneyGrantStatus" role="status" style="min-height:18px;margin:12px 0 0;font-size:13px"></p>';
+ panel.innerHTML='<h3 style="margin:0 0 16px;color:var(--gold)">💰 ВЫДАТЬ ДЕНЬГИ</h3><label style="display:block;margin:0 0 6px;font-size:13px">Nickname игрока</label><input id="moneyGrantNickname" type="text" maxlength="18" autocomplete="off" placeholder="Введи nickname" style="width:100%;box-sizing:border-box;margin-bottom:13px"><label style="display:block;margin:0 0 6px;font-size:13px">Сумма в звёздах (⭐)</label><input id="moneyGrantAmount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Например, 500" style="width:100%;box-sizing:border-box;margin-bottom:15px"><div style="display:flex;gap:9px"><button type="button" class="secondary" id="moneyGrantCancel" style="flex:1">ОТМЕНА</button><button type="button" class="goldbtn" id="moneyGrantSubmit" style="flex:1">ВЫДАТЬ</button></div><p id="moneyGrantStatus" role="status" style="min-height:18px;margin:12px 0 0;font-size:13px"></p>';
  overlay.appendChild(panel);document.body.appendChild(overlay);
  const close=()=>overlay.remove();
  panel.querySelector("#moneyGrantCancel").addEventListener("click",close);
@@ -7123,7 +7124,7 @@ function openMoneyGrantModal(){
   if(button.disabled)return;
   const nickname=nickInput.value.trim(),amount=Number(amountInput.value);
   if(!nickname){status.textContent="Введи nickname игрока.";nickInput.focus();return;}
-  if(!Number.isFinite(amount)||amount<=0||Math.round(amount*100)!==amount*100){status.textContent="Введи корректную сумму в рублях.";amountInput.focus();return;}
+  if(!Number.isFinite(amount)||amount<=0||Math.round(amount*100)!==amount*100){status.textContent="Введи корректную сумму в звёздах.";amountInput.focus();return;}
   button.disabled=true;button.textContent="ВЫДАЁМ…";status.textContent="";
   try{
    const result=await window.skebobGrantMoney(nickname,amount);
