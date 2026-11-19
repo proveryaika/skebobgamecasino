@@ -8,7 +8,7 @@
  window.initSupabaseAuth=function(){if(typeof window.initNickname==="function")window.initNickname();};
  window.skebobQueueSave=function(){try{if(typeof state!=="undefined")localStorage.setItem("skebobSave",JSON.stringify(state));}catch(e){console.warn("Local save:",e);}};
  window.skebobChangeNickname=async function(value){
-  const nick=String(value||"").trim().replace(/\\s+/g," ").slice(0,18);
+  const nick=String(value||"").trim().replace(/\s+/g," ").slice(0,18);
   if(nick.length<2)throw new Error("Ник должен содержать от 2 до 18 символов.");
   localStorage.setItem(NICK_KEY,nick);
   if(typeof updateNicknameUI==="function")updateNicknameUI();
