@@ -3515,11 +3515,14 @@ delete state.admin;
  if(!Array.isArray(state.dailyTasks.claimed))state.dailyTasks.claimed=[];
 }
 
-// Стартовые 20 монет выдаются только при отсутствии сохранения.
-// Существующий баланс не меняется и продолжает храниться в skebobSave.
-if(!hasExistingSave){
- state.balance=20;
+// Стартовые 1000 виртуальных звёзд выдаются один раз на этом браузере.
+// Если старое сохранение содержало стартовые 20 монет, заменяем их стартовым балансом.
+// Любой другой существующий баланс сохраняем без изменений.
+const welcomeGiftKey="skebobWelcome1000";
+if(storageGet(welcomeGiftKey)!=="1"){
+ if(!hasExistingSave||Number(state.balance)===20)state.balance=1000;
  storageSet("skebobSave",JSON.stringify(state));
+ storageSet(welcomeGiftKey,"1");
 }
 
 /* =========================
@@ -3578,6 +3581,17 @@ render();
 return saved;
 
 }
+
+// Автосохранение: фиксируем баланс и весь прогресс при изменениях,
+// уходе со страницы и периодически на случай закрытия вкладки.
+function persistGameState(){
+ try{storageSet("skebobSave",JSON.stringify(state));}catch(error){console.warn("Автосохранение:",error);}
+}
+window.addEventListener("pagehide",persistGameState);
+window.addEventListener("beforeunload",persistGameState);
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")persistGameState();});
+setInterval(persistGameState,3000);
+
 
 /* =========================
    STATS
