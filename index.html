@@ -5293,7 +5293,7 @@ if(circle)circle.style.setProperty("--chance",chance+"%");
 if(commission)commission.textContent="Шанс успеха: "+chance+"%";
 }
 
-function spinUpgrade(){
+async function spinUpgrade(){
 if(upgradeBusy)return;
 const input=document.getElementById("upgradeStake");
 const stake=input?Number(input.value):NaN;
@@ -5302,51 +5302,28 @@ if(!Number.isSafeInteger(stake)||stake<=0||stake>state.balance){
 alert("Проверь сумму: введи целое число монет в пределах баланса.");
 return;
 }
-
-const chance=getUpgradeChance(safeMultiplier);
 const arrow=document.getElementById("upgradeArrow");
 const status=document.getElementById("upgradeStatus");
 const button=document.getElementById("upgradeButton");
 if(!arrow||!status||!button)return;
-
-upgradeBusy=true;
-setUpgradeControlsDisabled(true);
-status.textContent="🎯 Апгрейд запущен…";
-
-state.balance-=stake;
-addTurnover(stake);
-state.stats.upgrades++;
-save();
-
-const winningAngle=Math.random()*360;
-const won=winningAngle<chance*3.6;
-const finalAngle=winningAngle;
-
-arrow.style.transition="none";
-arrow.style.transform="rotate(0deg)";
-void arrow.offsetWidth;
-arrow.style.transition="transform 4s cubic-bezier(.12,.7,.15,1)";
-arrow.style.transform="rotate("+(7*360+finalAngle)+"deg)";
-
-window.setTimeout(()=>{
+if(typeof window.skebobPlayUpgrade!=="function"){alert("Серверная игра недоступна. Попробуй позже.");return;}
+upgradeBusy=true;setUpgradeControlsDisabled(true);status.textContent="🎯 Сервер рассчитывает раунд…";
 try{
-if(won){
-const reward=Math.floor(stake*safeMultiplier);
-state.balance+=reward;
-state.stats.upgradeWins++;
-addDailyTaskProgress("upgrade");
-registerWin(reward);
-status.textContent="🏆 ПОБЕДА! +"+reward.toLocaleString("ru-RU")+" ⭐";
-}else{
-status.textContent="❌ ПРОИГРЫШ. Попробуй ещё раз.";
-}
-save();
-}finally{
-upgradeBusy=false;
-setUpgradeControlsDisabled(false);
-updateUpgradeInfo();
-}
-},4100);
+ const result=await window.skebobPlayUpgrade(stake,safeMultiplier);
+ state.balance=result.balance;
+ addTurnover(stake);state.stats.upgrades++;
+ const won=result.won,reward=result.payout;
+ if(won){state.stats.upgradeWins++;addDailyTaskProgress("upgrade");registerWin(reward);}
+ const finalAngle=won?Math.random()*result.chance*3.6:result.chance*3.6+Math.random()*(360-result.chance*3.6);
+ arrow.style.transition="none";arrow.style.transform="rotate(0deg)";void arrow.offsetWidth;
+ arrow.style.transition="transform 4s cubic-bezier(.12,.7,.15,1)";
+ arrow.style.transform="rotate("+(7*360+finalAngle)+"deg)";
+ window.setTimeout(()=>{
+  status.textContent=won?"🏆 ПОБЕДА! +"+reward.toLocaleString("ru-RU")+" ⭐":"❌ ПРОИГРЫШ. Попробуй ещё раз.";
+  save();if(typeof render==="function")render();
+  upgradeBusy=false;setUpgradeControlsDisabled(false);updateUpgradeInfo();
+ },4100);
+}catch(error){status.textContent="⚠️ "+(error.message||"Ошибка раунда");alert(error.message||"Ошибка раунда");upgradeBusy=false;setUpgradeControlsDisabled(false);updateUpgradeInfo();}
 }
 
 /* =========================
