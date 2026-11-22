@@ -22,7 +22,7 @@ function showAuth(){
  let mode="login";const login=o.querySelector("#skLoginTab"),signup=o.querySelector("#skSignupTab"),submit=o.querySelector("#skAuthSubmit"),status=o.querySelector("#skAuthStatus");
  function setMode(m){mode=m;login.style.background=m==="login"?"#493819":"var(--panel2)";signup.style.background=m==="signup"?"#493819":"var(--panel2)";submit.textContent=m==="login"?"ВОЙТИ":"СОЗДАТЬ АККАУНТ";o.querySelector("#skPassword").autocomplete=m==="login"?"current-password":"new-password";}
  login.onclick=()=>setMode("login");signup.onclick=()=>setMode("signup");
- async function go(){if(busy)return;const username=o.querySelector("#skUsername").value.trim().toLowerCase(),password=o.querySelector("#skPassword").value;if(!/^[a-z0-9_]{3,20}$/.test(username)){status.textContent="Username: 3–20 латинских букв, цифр или _.";return;}if(password.length<8||password.length>72){status.textContent="Пароль должен быть от 8 до 72 символов.";return;}busy=true;submit.disabled=true;submit.textContent="ПОДОЖДИ…";try{saveSession(await call(mode,{username,password}));o.remove();await bootstrap();window.dispatchEvent(new CustomEvent("skebob-auth-ready"));}catch(e){status.textContent=e.message;}finally{busy=false;if(submit.isConnected){submit.disabled=false;setMode(mode);}}}
+ async function go(){if(busy)return;const username=o.querySelector("#skUsername").value.trim().toLowerCase(),password=o.querySelector("#skPassword").value;if(!/^[a-z0-9_]{3,20}$/.test(username)){status.textContent="Username: 3–20 латинских букв, цифр или _.";return;}if(password.length<8||password.length>72){status.textContent="Пароль должен быть от 8 до 72 символов.";return;}busy=true;submit.disabled=true;submit.textContent="ПОДОЖДИ…";try{saveSession(await call(mode,{username,password}));o.remove();await bootstrap();await refreshAdminStatus();window.dispatchEvent(new CustomEvent("skebob-auth-ready"));}catch(e){status.textContent=e.message;}finally{busy=false;if(submit.isConnected){submit.disabled=false;setMode(mode);}}}
  submit.onclick=go;o.querySelector("#skPassword").addEventListener("keydown",e=>{if(e.key==="Enter")go();});setMode("login");
 }
 async function bootstrap(){
@@ -30,7 +30,27 @@ async function bootstrap(){
  if(typeof state!=="undefined"&&state){const balance=Math.max(0,Number(d.balance)||0);if(d.save&&typeof d.save==="object"){const safe={...d.save};delete safe.balance;delete safe.balance_stars;delete safe.wallet;Object.assign(state,safe);}state.balance=balance;if(typeof render==="function")render();}
  const username=d.username||window.skebobAccount?.user_metadata?.username||"Player";localStorage.setItem("skebobNickname",username);if(typeof updateNicknameUI==="function")updateNicknameUI();return d;
 }
-window.initSupabaseAuth=async function(){if(!token()&&!(await refresh())){showAuth();return;}try{await bootstrap();window.dispatchEvent(new CustomEvent("skebob-auth-ready"));}catch(e){console.error("SKEBOB auth:",e);showAuth();}};
+window.initSupabaseAuth=async function(){if(!token()&&!(await refresh())){showAuth();return;}try{await bootstrap();await refreshAdminStatus();window.dispatchEvent(new CustomEvent("skebob-auth-ready"));}catch(e){console.error("SKEBOB auth:",e);showAuth();}};
+async function adminAction(action,body={}){const response=await fetch(URL+"/functions/v1/casino-api/admin",{method:"POST",headers:{"Content-Type":"application/json","apikey":KEY,"Authorization":"Bearer "+token()},body:JSON.stringify({action,...body})});const data=await response.json().catch(()=>({}));if(!response.ok)throw new Error(data.error||"Административный запрос не выполнен.");return data;}
+async function refreshAdminStatus(){try{const d=await adminAction("admin_status");window.skebobIsAdmin=d.is_admin===true;}catch(_){window.skebobIsAdmin=false;}if(typeof renderSpecialAccountControls==="function")renderSpecialAccountControls();return window.skebobIsAdmin;}
+
+window.skebobGrantMoney=async(nickname,amount)=>adminAction("grant_stars",{nickname,amount:Math.round(Number(amount))});
+window.skebobLookupPlayer=async(nickname)=>adminAction("lookup",{nickname});
+window.skebobGetAllPlayerAccounts=async()=>{const d=await adminAction("players");return d.players||[];};
+window.skebobSendPlayerNotification=async(nickname,message)=>adminAction("notify",{nickname,message});
+window.skebobPublishGlobalAnnouncement=async(message)=>adminAction("announce",{message});
+window.skebobBanPlayer=async(nickname,months,days)=>adminAction("ban",{nickname,months,days});
+window.skebobFreezePlayer=async(nickname,months,days)=>adminAction("freeze",{nickname,months,days});
+window.skebobUnbanPlayer=async(nickname)=>adminAction("unban",{nickname});
+window.skebobSetPlayerBadge=async(nickname,color)=>adminAction("badge_set",{nickname,color});
+window.skebobRemovePlayerBadge=async(nickname)=>adminAction("badge_remove",{nickname});
+window.skebobResetPlayerProgress=async(nickname)=>adminAction("reset_progress",{nickname});
+window.skebobGetPopularGames=async()=>{const d=await adminAction("popular_games");return d.rows||[];};
+window.skebobGetGameStatistics=async()=>{const d=await adminAction("game_stats");return d.rows||[];};
+window.skebobGetMyBadge=async()=>{const d=await adminAction("my_badge");return d.badge;};
+window.skebobShowPendingGlobalAnnouncements=async()=>{const d=await adminAction("pending");for(const item of d.announcements||[]){await adminAction("mark_pending_read",{kind:"announcement",id:item.id});if(typeof showPlayerNotification==="function")await showPlayerNotification(item.message);}return true;};
+window.skebobShowPendingNotifications=async()=>{const d=await adminAction("pending");for(const item of d.notifications||[]){await adminAction("mark_pending_read",{kind:"notification",id:item.id});if(typeof showPlayerNotification==="function")await showPlayerNotification(item.message);}return true;};
+window.skebobTrackGameLaunch=async(gameId)=>{try{await adminAction("track_launch",{game_id:gameId});return true;}catch(e){console.warn("Game launch tracking:",e);return false;}};
 window.skebobPlayUpgrade=async function(bet,multiplier){
  const access=token();if(!access)throw new Error("Сначала войди в аккаунт.");
  const roundId=crypto.randomUUID();
