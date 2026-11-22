@@ -6954,7 +6954,7 @@ function openPlayerFreezeModal(){
   if(!Number.isInteger(m)||m<0||m>120||!Number.isInteger(d)||d<0||d>3650||m+d===0){status.style.color="#ff8585";status.textContent="Укажи корректный срок: минимум 1 день.";return;}
   send.disabled=true;send.textContent="ЗАМОРАЖИВАЕМ…";status.textContent="";
   try{
-   const result=await window.skebobBanPlayer(nick.value.trim(),m,d);
+   const result=await window.skebobFreezePlayer(nick.value.trim(),m,d);
    const until=new Date(result.expires_at).toLocaleString("ru-RU");
    status.style.color="#8be0a8";status.textContent="Аккаунт "+result.player_nickname+" заморожен до "+until+".";
    nick.value="";
