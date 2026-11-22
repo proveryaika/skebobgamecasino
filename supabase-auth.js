@@ -31,6 +31,15 @@ async function bootstrap(){
  const username=d.username||window.skebobAccount?.user_metadata?.username||"Player";localStorage.setItem("skebobNickname",username);if(typeof updateNicknameUI==="function")updateNicknameUI();return d;
 }
 window.initSupabaseAuth=async function(){if(!token()&&!(await refresh())){showAuth();return;}try{await bootstrap();window.dispatchEvent(new CustomEvent("skebob-auth-ready"));}catch(e){console.error("SKEBOB auth:",e);showAuth();}};
+window.skebobPlayUpgrade=async function(bet,multiplier){
+ const access=token();if(!access)throw new Error("Сначала войди в аккаунт.");
+ const roundId=crypto.randomUUID();
+ const response=await fetch(URL+"/functions/v1/casino-api/play-upgrade",{method:"POST",headers:{"Content-Type":"application/json","apikey":KEY,"Authorization":"Bearer "+access},body:JSON.stringify({bet,multiplier,roundId})});
+ const data=await response.json().catch(()=>({}));
+ if(!response.ok)throw new Error(data.error||"Не удалось завершить раунд.");
+ const round=data.round;if(!round)throw new Error("Сервер вернул пустой результат.");
+ return {won:!!round.won,payout:Number(round.payout_stars)||0,balance:Number(round.balance_stars)||0,chance:Number(round.chance_percent)||0,roundId:round.round_id};
+};
 window.skebobQueueSave=async function(){if(!token()||typeof state==="undefined"||!state)return;const safe={...state};delete safe.balance;delete safe.balance_stars;delete safe.wallet;try{await authCall("save",{save:safe});}catch(e){console.warn("Cloud save:",e);}};
 window.skebobChangeNickname=async function(){throw new Error("Смена username пока не подключена.");};
 window.persistNickname=()=>true;
