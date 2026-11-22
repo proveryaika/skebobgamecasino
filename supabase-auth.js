@@ -70,5 +70,5 @@ window.skebobGetMyBadge=async()=>null;window.skebobShowPendingGlobalAnnouncement
 window.skebobCreateStarsInvoice=async()=>{throw new Error("Пополнения отключены: только игровые Stars.");};window.skebobRefreshAfterStarsPayment=async()=>false;
 window.skebobLogout=async function(){[AK,RK,UK].forEach(k=>localStorage.removeItem(k));session=null;location.reload();};
 const disabled=async()=>{throw new Error("Эта функция пока не подключена к серверу.");};
-for(const n of ["skebobResetPlayerProgress","skebobGrantMoney","skebobLookupPlayer","skebobGetGameStatistics","skebobGetPopularGames","skebobSetPlayerBadge","skebobRemovePlayerBadge","skebobBanPlayer","skebobUnbanPlayer","skebobSendPlayerNotification","skebobPublishGlobalAnnouncement","skebobGetAllPlayerAccounts","skebobChangePassword"])window[n]=disabled;
+for(const n of ["skebobChangePassword"])window[n]=disabled;
 })();
