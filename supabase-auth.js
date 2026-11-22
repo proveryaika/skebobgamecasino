@@ -66,7 +66,7 @@ window.skebobChangeNickname=async function(){throw new Error("Смена usernam
 window.persistNickname=()=>true;
 window.getNickname=function(){try{return JSON.parse(localStorage.getItem(UK)||"{}").username||localStorage.getItem("skebobNickname")||"Player";}catch(_){return localStorage.getItem("skebobNickname")||"Player";}};
 window.skebobGetLeaderboard=async function(){const d=await authCall("leaderboard",{});return d.players||[];};
-window.skebobGetMyBadge=async()=>null;window.skebobShowPendingGlobalAnnouncements=async()=>{};window.skebobShowPendingNotifications=async()=>{};window.skebobTrackGameLaunch=async()=>false;
+// Keep the server-backed admin helpers defined above; do not overwrite them with offline stubs.
 window.skebobCreateStarsInvoice=async()=>{throw new Error("Пополнения отключены: только игровые Stars.");};window.skebobRefreshAfterStarsPayment=async()=>false;
 window.skebobLogout=async function(){[AK,RK,UK].forEach(k=>localStorage.removeItem(k));session=null;location.reload();};
 const disabled=async()=>{throw new Error("Эта функция пока не подключена к серверу.");};
