@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SKEBOB — Админ-панель</title>
+<style>
+:root{color-scheme:dark;--bg:#090511;--panel:#160d22;--panel2:#211431;--line:#67369a;--gold:#ffd36b;--text:#f8f2ff;--muted:#b7a7c8;--green:#54d99a;--red:#ff7889}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0,#35105a 0,transparent 38%),var(--bg);color:var(--text);font:15px Arial,sans-serif;min-height:100vh}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px max(18px,calc((100% - 1180px)/2));background:#10091beF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.brand{font-size:20px;font-weight:1000;color:var(--gold);letter-spacing:1px}.brand small{display:block;color:#d8aaff;font-size:10px;letter-spacing:3px;margin-top:3px}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid #8a55b6;border-radius:11px;padding:11px 14px;background:linear-gradient(135deg,#54217c,#32134d);color:white;font-weight:800}button:disabled{opacity:.5;cursor:wait}
+main{max-width:1180px;margin:24px auto;padding:0 18px 50px}.status{padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--muted);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.metric,.card{background:linear-gradient(145deg,#1b1028,#120b1c);border:1px solid #58317c;border-radius:17px;padding:17px;box-shadow:0 8px 28px #0004}
+.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;color:var(--gold);font-size:26px;margin-top:9px;overflow-wrap:anywhere}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}.card h2{font-size:17px;margin:0 0 14px;color:var(--gold)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}.fields .wide{grid-column:1/-1}
+input,textarea,select{width:100%;padding:12px;border:1px solid #583c70;border-radius:10px;background:#0d0715;color:var(--text);outline:none}textarea{min-height:84px;resize:vertical}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.actions button{flex:1;min-width:125px}.danger{background:linear-gradient(135deg,#9b2d49,#551528);border-color:#c64c69}.good{background:linear-gradient(135deg,#167b54,#0d4935);border-color:#3da97b}
+.result{font-size:13px;color:var(--muted);margin-top:12px;min-height:18px;white-space:pre-wrap}.list{display:grid;gap:8px;max-height:370px;overflow:auto}.item{padding:11px;border:1px solid #43275c;background:#10091a;border-radius:11px;display:flex;justify-content:space-between;gap:10px;align-items:center}.item b{overflow-wrap:anywhere}.muted{color:var(--muted);font-size:12px}.widecard{margin-top:14px}.pill{font-size:11px;color:var(--green)}
+.hidden{display:none!important}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}header{padding:13px 16px}}
+@media(max-width:420px){.fields{grid-template-columns:1fr}.fields .wide{grid-column:auto}.metric strong{font-size:21px}}
+</style>
+</head>
+<body>
+<header><div class="brand">SKEBOB <small>CONTROL CENTER</small></div><div><span id="adminName" class="muted"></span> <button id="logout" type="button">Выйти</button></div></header>
+<main>
+<div id="gate" class="status">Проверяем авторизацию и права администратора…</div>
+<div id="app" class="hidden">
+<div class="grid">
+ <div class="metric"><span>Аккаунты в списке</span><strong id="playersCount">—</strong></div>
+ <div class="metric"><span>Популярные игры</span><strong id="gamesCount">—</strong></div>
+ <div class="metric"><span>Статистика раундов</span><strong id="statsCount">—</strong></div>
+ <div class="metric"><span>Доступ</span><strong style="font-size:18px;color:var(--green)">ADMIN ✓</strong></div>
+</div>
+<div class="layout">
+<section class="card"><h2>👤 Игроки и баланс</h2>
+ <div class="fields"><input id="nickname" placeholder="Ник игрока" maxlength="30"><input id="amount" type="number" min="1" step="1" placeholder="Количество ⭐"></div>
+ <div class="actions"><button id="lookup">Проверить профиль</button><button id="grant" class="good">Выдать ⭐</button></div>
+ <div id="playerResult" class="result"></div>
+ <div class="actions"><button id="ban" class="danger">Заблокировать</button><button id="freeze">Заморозить</button><button id="unban" class="good">Снять бан</button></div>
+ <div class="fields" style="margin-top:10px"><input id="months" type="number" min="0" max="120" value="0" placeholder="Месяцев"><input id="days" type="number" min="0" max="3650" value="1" placeholder="Дней"></div>
+ <div class="actions"><button id="badge">Выдать синюю галочку</button><button id="removeBadge" class="danger">Снять галочку</button><button id="reset" class="danger">Сбросить прогресс</button></div>
+</section>
+<section class="card"><h2>📣 Связь с игроками</h2>
+ <input id="notifyNick" placeholder="Ник игрока" maxlength="30">
+ <textarea id="notifyText" placeholder="Текст личного уведомления"></textarea>
+ <button id="notify" style="width:100%;margin-top:8px">Отправить уведомление</button>
+ <hr style="border:0;border-top:1px solid #43275c;margin:18px 0">
+ <textarea id="announceText" placeholder="Текст глобального объявления"></textarea>
+ <button id="announce" class="good" style="width:100%;margin-top:8px">Опубликовать объявление</button>
+ <div id="messageResult" class="result"></div>
+</section>
+</div>
+<div class="layout">
+<section class="card"><h2>👥 Аккаунты</h2><button id="reloadPlayers">Обновить список</button><div id="players" class="list" style="margin-top:12px"><div class="muted">Нажми «Обновить список».</div></div></section>
+<section class="card"><h2>🎮 Популярные игры</h2><button id="reloadGames">Обновить</button><div id="games" class="list" style="margin-top:12px"></div></section>
+</div>
+<section class="card widecard"><h2>📊 Статистика игр</h2><button id="reloadStats">Обновить статистику</button><div id="stats" class="list" style="margin-top:12px"></div></section>
+</div>
+</main>
+<script src="./supabase-auth.js"></script>
+<script>
+(function(){
+ const $=id=>document.getElementById(id);
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const gate=$("gate"),app=$("app");
+ function message(id,text,ok){const el=$(id);el.textContent=text;el.style.color=ok?"var(--green)":"var(--red)";}
+ function adminReady(){
+  if(window.skebobIsAdmin!==true){gate.textContent="⛔ Доступ запрещён. Этот аккаунт не имеет административных прав.";app.classList.add("hidden");return;}
+  gate.textContent="✓ Администратор подтверждён сервером. Все действия выполняются через защищённые Supabase Edge Functions.";
+  $("adminName").textContent=window.getNickname?.()||"Администратор";app.classList.remove("hidden");
+ }
+ async function run(button,fn){if(button.disabled)return;button.disabled=true;const old=button.textContent;button.textContent="Выполняем…";try{await fn();}catch(e){alert(e?.message||"Операция не выполнена");}finally{button.disabled=false;button.textContent=old;}}
+ $("lookup").onclick=()=>run($("lookup"),async()=>{const n=$("nickname").value.trim();if(!n)throw Error("Введи ник.");const p=await window.skebobLookupPlayer(n);$("playerResult").textContent=JSON.stringify(p,null,2);});
+ $("grant").onclick=()=>run($("grant"),async()=>{const n=$("nickname").value.trim(),a=Number($("amount").value);if(!n||!Number.isSafeInteger(a)||a<1)throw Error("Укажи ник и целое количество ⭐ больше нуля.");const r=await window.skebobGrantMoney(n,a);message("playerResult","Выдано "+a+" ⭐ игроку "+r.player_nickname+". Новый баланс: "+r.new_balance+" ⭐",true);});
+ $("ban").onclick=()=>run($("ban"),async()=>{const n=$("nickname").value.trim();if(!n)throw Error("Введи ник.");const r=await window.skebobBanPlayer(n,Number($("months").value)||0,Number($("days").value)||0);message("playerResult","Блокировка применена: "+(r.player_nickname||n),true);});
+ $("freeze").onclick=()=>run($("freeze"),async()=>{const n=$("nickname").value.trim();if(!n)throw Error("Введи ник.");const r=await window.skebobFreezePlayer(n,Number($("months").value)||0,Number($("days").value)||0);message("playerResult","Аккаунт заморожен: "+(r.player_nickname||n),true);});
+ $("unban").onclick=()=>run($("unban"),async()=>{const n=$("nickname").value.trim();if(!n)throw Error("Введи ник.");await window.skebobUnbanPlayer(n);message("playerResult","Блокировка снята: "+n,true);});
+ $("badge").onclick=()=>run($("badge"),async()=>{const n=$("nickname").value.trim();if(!n)throw Error("Введи ник.");await window.skebobSetPlayerBadge(n,"blue");message("playerResult","Синяя галочка выдана: "+n,true);});
+ $("removeBadge").onclick=()=>run($("removeBadge"),async()=>{const n=$("nickname").value.trim();if(!n)throw Error("Введи ник.");await window.skebobRemovePlayerBadge(n);message("playerResult","Галочка снята: "+n,true);});
+ $("reset").onclick=()=>run($("reset"),async()=>{const n=$("nickname").value.trim();if(!n)throw Error("Введи ник.");if(!confirm("Точно сбросить весь прогресс игрока "+n+"? Это действие необратимо."))return;const r=await window.skebobResetPlayerProgress(n);message("playerResult","Прогресс сброшен: "+(r.player_nickname||n),true);});
+ $("notify").onclick=()=>run($("notify"),async()=>{const n=$("notifyNick").value.trim(),m=$("notifyText").value.trim();if(!n||!m)throw Error("Укажи ник и текст.");await window.skebobSendPlayerNotification(n,m);message("messageResult","Уведомление отправлено игроку "+n,true);});
+ $("announce").onclick=()=>run($("announce"),async()=>{const m=$("announceText").value.trim();if(!m)throw Error("Введи текст объявления.");if(!confirm("Опубликовать объявление всем игрокам?"))return;await window.skebobPublishGlobalAnnouncement(m);message("messageResult","Объявление опубликовано.",true);});
+ $("reloadPlayers").onclick=()=>run($("reloadPlayers"),async()=>{const rows=await window.skebobGetAllPlayerAccounts();$("playersCount").textContent=rows.length;$("players").innerHTML=rows.map(p=>'<div class="item"><div><b>'+esc(p.nickname||p.player_nickname||p.username||"Игрок")+'</b><div class="muted">'+esc(p.user_id||p.id||"")+'</div></div><button type="button" data-nick="'+esc(p.nickname||p.player_nickname||p.username||"")+'">Выбрать</button></div>').join("")||'<div class="muted">Нет аккаунтов.</div>';});
+ $("players").addEventListener("click",e=>{const b=e.target.closest("button[data-nick]");if(b)$("nickname").value=b.dataset.nick;});
+ $("reloadGames").onclick=()=>run($("reloadGames"),async()=>{const rows=await window.skebobGetPopularGames();$("gamesCount").textContent=rows.length;$("games").innerHTML=rows.map(r=>'<div class="item"><b>'+esc(r.game_name||r.game_id||r.name||"Игра")+'</b><span class="pill">'+esc(r.launches??r.total_launches??r.count??"—")+' запусков</span></div>').join("")||'<div class="muted">Нет данных.</div>';});
+ $("reloadStats").onclick=()=>run($("reloadStats"),async()=>{const rows=await window.skebobGetGameStatistics();$("statsCount").textContent=rows.length;$("stats").innerHTML=rows.map(r=>'<div class="item"><b>'+esc(r.game_name||r.game_id||r.name||"Статистика")+'</b><span class="muted">'+esc(JSON.stringify(r))+'</span></div>').join("")||'<div class="muted">Нет данных.</div>';});
+ $("logout").onclick=()=>window.skebobLogout();
+ window.addEventListener("skebob-auth-ready",adminReady);
+ window.addEventListener("load",async()=>{if(typeof window.initSupabaseAuth==="function")await window.initSupabaseAuth();setTimeout(adminReady,500);});
+})();
+</script>
+</body></html>
