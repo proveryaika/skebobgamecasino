@@ -3444,7 +3444,7 @@ turnover:0
 
 let state={
 
-balance:20,
+balance:0,
 
 tapGame:{hourStartedAt:0,earnedCents:0,pendingCents:0,cooldownUntil:0},
 
@@ -3515,15 +3515,7 @@ delete state.admin;
  if(!Array.isArray(state.dailyTasks.claimed))state.dailyTasks.claimed=[];
 }
 
-// Стартовые 1000 виртуальных звёзд выдаются один раз на этом браузере.
-// Если старое сохранение содержало стартовые 20 монет, заменяем их стартовым балансом.
-// Любой другой существующий баланс сохраняем без изменений.
-const welcomeGiftKey="skebobWelcome1000";
-if(storageGet(welcomeGiftKey)!=="1"){
- if(!hasExistingSave||Number(state.balance)===20)state.balance=1000;
- storageSet("skebobSave",JSON.stringify(state));
- storageSet(welcomeGiftKey,"1");
-}
+// Стартовые 10 ⭐ начисляются сервером при регистрации; локальные бонусы отключены.
 
 /* =========================
    GLOBAL VARIABLES
@@ -7356,9 +7348,9 @@ window.refreshLeaderboard=async function(){
 </script>
 
 
-<!-- Авторизация отключена: игра работает автономно. -->
-<script src="./supabase-auth.js?v=offline"></script>
-<script>window.addEventListener("load",()=>{if(typeof initNickname==="function")initNickname();});</script>
+<!-- Авторизация по имени пользователя и паролю; сохранение в Supabase. -->
+<script src="./supabase-auth.js?v=cloud-auth-1"></script>
+<script>window.addEventListener("load",()=>{if(typeof window.initSupabaseAuth==="function")window.initSupabaseAuth();});</script>
 
 <script>
 /* Лидерборд: открытие не требует ручной загрузки; данные получает после авторизации и затем каждый час. */
