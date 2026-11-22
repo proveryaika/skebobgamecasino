@@ -44,7 +44,7 @@ window.skebobBanPlayer=async(nickname,months,days)=>adminAction("ban",{nickname,
 window.skebobFreezePlayer=async(nickname,months,days)=>adminAction("freeze",{nickname,months,days});
 window.skebobUnbanPlayer=async(nickname)=>adminAction("unban",{nickname});
 window.skebobSetPlayerBadge=async(nickname,color)=>adminAction("badge_set",{nickname,color});
-window.skebobRemovePlayerBadge=async(nickname)=>adminAction("badge_remove",{nickname});
+window.skebobRemovePlayerBadge=async(nickname)=>{const d=await adminAction("badge_remove",{nickname});return d.player_nickname;};
 window.skebobResetPlayerProgress=async(nickname)=>adminAction("reset_progress",{nickname});
 window.skebobGetPopularGames=async()=>{const d=await adminAction("popular_games");return d.rows||[];};
 window.skebobGetGameStatistics=async()=>{const d=await adminAction("game_stats");return d.rows||[];};
