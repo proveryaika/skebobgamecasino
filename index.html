@@ -7115,7 +7115,7 @@ function openMoneyGrantModal(){
   if(button.disabled)return;
   const nickname=nickInput.value.trim(),amount=Number(amountInput.value);
   if(!nickname){status.textContent="Введи nickname игрока.";nickInput.focus();return;}
-  if(!Number.isFinite(amount)||amount<=0||Math.round(amount*100)!==amount*100){status.textContent="Введи целое число виртуальных звёзд.";amountInput.focus();return;}
+  if(!Number.isSafeInteger(amount)||amount<1){status.textContent="Введи целое число виртуальных звёзд.";amountInput.focus();return;}
   button.disabled=true;button.textContent="ВЫДАЁМ…";status.textContent="";
   try{
    const result=await window.skebobGrantMoney(nickname,amount);
