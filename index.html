@@ -7356,9 +7356,9 @@ window.refreshLeaderboard=async function(){
 </script>
 
 
-<!-- Авторизация отключена: игра работает автономно. -->
-<script src="./supabase-auth.js?v=offline"></script>
-<script>window.addEventListener("load",()=>{if(typeof initNickname==="function")initNickname();});</script>
+<!-- Авторизация SKEBOB через Supabase. -->
+<script src="./supabase-auth.js?v=online-20261122"></script>
+<script>window.addEventListener("load",()=>{if(typeof window.initSupabaseAuth==="function")window.initSupabaseAuth();});</script>
 
 <script>
 /* Лидерборд: открытие не требует ручной загрузки; данные получает после авторизации и затем каждый час. */
